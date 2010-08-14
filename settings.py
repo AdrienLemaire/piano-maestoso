@@ -72,6 +72,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
 # Example: "http://media.lawrence.com"
 STATIC_URL = "/site_media/static/"
 
+FLOWPLAYER = "/site_media/flowplayer/flowplayer-3.2.2.swf"
+
 # Additional directories which hold static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "media"),

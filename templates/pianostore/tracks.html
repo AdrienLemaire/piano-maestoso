@@ -49,6 +49,7 @@
                                     <td>
                                         <!-- delete track -->
                                         <form method="POST" action="{% url delete_track track.id %}">
+                                            {% csrf_token %}
                                             <input type="submit" value="{% trans "Delete Track" %}" />
                                         </form>
                                     </td>

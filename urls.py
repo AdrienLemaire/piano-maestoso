@@ -69,6 +69,7 @@ urlpatterns = patterns("",
     url(r"^feeds/posts/(.*)/$", "django.contrib.syndication.views.feed", blogs_feed_dict),
     url(r"^feeds/bookmarks/(.*)/?$", "django.contrib.syndication.views.feed", bookmarks_feed_dict),
     url(r"^pianostore/", include("pianostore.urls")),
+    url(r'^videos/', include('videologue.urls')),
 )
 
 ## @@@ for now, we'll use friends_app to glue this stuff together

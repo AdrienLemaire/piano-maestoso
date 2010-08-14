@@ -9,6 +9,7 @@
     <h1>{% trans "Add Track" %}</h1>
  
     <form enctype="multipart/form-data" method="POST" action="" class="uniForm">
+        {% csrf_token %}
         <fieldset class="inlineLabels">
             {{ track_form|as_uni_form }}
             <div class="form_block">

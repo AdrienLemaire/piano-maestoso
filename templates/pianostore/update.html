@@ -8,6 +8,7 @@
 {% block body %}
     <h1>{% trans "Update Track: " %}{{ track.title }}</h1>
         <form enctype="multipart/form-data" method="POST" action="" class="uniForm">
+            {% csrf_token %}
             <p align='center'>{{ track.fullpicture|safe }}</p>
             <fieldset class="inlineLabels">
                 {{ track_form|as_uni_form }}
