@@ -6,11 +6,12 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
- 
+
 #from piano
-from piano.models import Track
-from piano.forms import TrackForm
- 
+from models import Track
+from forms import TrackForm
+
+
 def tracks(request):
     """ Return the all tracks list, ordered by added date. """
     tracks = Track.objects.all().order_by("-added")
@@ -18,7 +19,8 @@ def tracks(request):
         "tracks": tracks,
         "list": 'all',
     }, context_instance=RequestContext(request))
- 
+
+
 def user_tracks(request, username):
     """ Return an user tracks list. """
     user = get_object_or_404(User, username=username)
@@ -28,7 +30,8 @@ def user_tracks(request, username):
         "list": 'user',
         "username": username,
     }, context_instance=RequestContext(request))
- 
+
+
 def track(request, track_id):
     """ Return a track given its id. """
     isyours = False
@@ -39,7 +42,8 @@ def track(request, track_id):
         "track": track,
         "isyours": isyours,
     }, context_instance=RequestContext(request))
- 
+
+
 @login_required
 def your_tracks(request):
     """ Return the logged user tracks list. """
@@ -48,7 +52,8 @@ def your_tracks(request):
         "tracks": yourtracks,
         "list": 'yours',
     }, context_instance=RequestContext(request))
- 
+
+
 @login_required
 def add_track(request):
     """ Add a track to the piano. """
@@ -60,7 +65,8 @@ def add_track(request):
             new_track = track_form.save(commit=False)
             new_track.adder = request.user
             new_track.save()
-            request.user.message_set.create(message=_("You have saved track '%(title)s'") %  {'title': new_track.title})
+            request.user.message_set.create(message=_("You have saved track "
+                                  "'%(title)s'") % {'title': new_track.title})
             return HttpResponseRedirect(reverse("piano.views.tracks"))
     # GET request
     else:
@@ -72,7 +78,8 @@ def add_track(request):
     return render_to_response("piano/add.html", {
         "track_form": track_form,
     }, context_instance=RequestContext(request))
- 
+
+
 @login_required
 def update_track(request, track_id):
     """ Update a track given its id. """
@@ -84,7 +91,8 @@ def update_track(request, track_id):
             #from ipdb import set_trace; set_trace()
             if track_form.is_valid():
                 track_form.save()
-                request.user.message_set.create(message=_("You have updated track '%(title)s'") %  {'title': track.title})
+                request.user.message_set.create(message=_("You have updated "
+                              "track '%(title)s'") % {'title': track.title})
                 return HttpResponseRedirect(reverse("piano.views.tracks"))
     else:
         track_form = TrackForm(instance=track)
@@ -92,7 +100,8 @@ def update_track(request, track_id):
             "track_form": track_form,
             "track": track,
             }, context_instance=RequestContext(request))
- 
+
+
 @login_required
 def delete_track(request, track_id):
     """ Delete a track given its id. """
@@ -100,5 +109,5 @@ def delete_track(request, track_id):
     if request.user == track.adder:
         track.delete()
         request.user.message_set.create(message="Track Deleted")
- 
+
     return HttpResponseRedirect(reverse("piano.views.tracks"))
