@@ -155,7 +155,7 @@ INSTALLED_APPS = [
     "django.contrib.markup",
     
     "pinax.templatetags",
-    
+
     # external
     "notification", # must be first
     "staticfiles",
@@ -186,7 +186,8 @@ INSTALLED_APPS = [
     "django_sorting",
     "django_markup",
     "tagging_ext",
-    
+    "rosetta",
+
     # Pinax
     "pinax.apps.account",
     "pinax.apps.signup_codes",
@@ -198,9 +199,10 @@ INSTALLED_APPS = [
     "pinax.apps.topics",
     "pinax.apps.threadedcomments_extras",
     "pinax.apps.voting_extras",
-    
+
     # project
     "about",
+    "piano",
 ]
 
 FIXTURE_DIRS = [
