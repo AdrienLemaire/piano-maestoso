@@ -30,4 +30,4 @@ class TrackForm(forms.ModelForm):
 
     class Meta:
         model = Track
-        fields = ('composer', 'publisher', 'author', 'description', 'title')
+        fields = ('coverart', 'composer', 'artist', 'category', 'description', 'title')

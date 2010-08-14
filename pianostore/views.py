@@ -71,6 +71,7 @@ def add_track(request):
     # GET request
     else:
         track_form = TrackForm()
+        print "track_form data : ", track_form.data
         return render_to_response("pianostore/add.html", {
             "track_form": track_form,
             }, context_instance=RequestContext(request))

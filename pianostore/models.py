@@ -22,8 +22,8 @@ class Track(models.Model):
     """Track Model"""
     title = models.CharField(_('title'), max_length=255)
     artist = models.CharField(_('artist'), max_length=255)
-    composer = models.CharField(_('artist'), max_length=255)
-    category = models.CharField(_('artist'), max_length=255)
+    composer = models.CharField(_('composer'), max_length=255)
+    category = models.CharField(_('category'), max_length=255)
     coverart = models.ImageField(upload_to="pianostore", blank=True, null=True)
     description = models.TextField(_('description'), blank=True)
     adder = models.ForeignKey(User, related_name="added_tracks",

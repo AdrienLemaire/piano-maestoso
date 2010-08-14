@@ -122,18 +122,18 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.media",
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
-    
+
     "staticfiles.context_processors.static_url",
-    
+
     "pinax.core.context_processors.pinax_settings",
-    
+
     "pinax.apps.account.context_processors.account",
-    
+
     "notification.context_processors.notification",
     "announcements.context_processors.site_wide_announcements",
     "messages.context_processors.inbox",
     "friends_app.context_processors.invitations",
-    
+
     "piano-maestoso.context_processors.combined_inbox_count",
 ]
 
@@ -153,7 +153,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.markup",
-    
+
     "pinax.templatetags",
 
     # external
@@ -187,6 +187,7 @@ INSTALLED_APPS = [
     "django_markup",
     "tagging_ext",
     "rosetta",
+    "videologue",
 
     # Pinax
     "pinax.apps.account",
