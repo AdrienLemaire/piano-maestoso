@@ -108,7 +108,7 @@ MIDDLEWARE_CLASSES = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "pianoFriends.urls"
+ROOT_URLCONF = "piano-maestoso.urls"
 
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
@@ -134,7 +134,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "messages.context_processors.inbox",
     "friends_app.context_processors.invitations",
     
-    "pianoFriends.context_processors.combined_inbox_count",
+    "piano-maestoso.context_processors.combined_inbox_count",
 ]
 
 COMBINED_INBOX_COUNT_SOURCES = [

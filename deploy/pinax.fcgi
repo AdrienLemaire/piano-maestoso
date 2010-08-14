@@ -1,4 +1,4 @@
-# pinax.fcgi is configured to live in projects/pianoFriends/deploy.
+# pinax.fcgi is configured to live in projects/piano-maestoso/deploy.
 
 import os
 import sys
@@ -9,7 +9,7 @@ from site import addsitedir
 sys.path.insert(0, abspath(join(dirname(__file__), "../../")))
 
 from django.conf import settings
-os.environ["DJANGO_SETTINGS_MODULE"] = "pianoFriends.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "piano-maestoso.settings"
 
 sys.path.insert(0, join(settings.PROJECT_ROOT, "apps"))
 
