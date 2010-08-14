@@ -144,3 +144,8 @@ if settings.SERVE_MEDIA:
     urlpatterns += patterns("",
         url(r"", include("staticfiles.urls")),
     )
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        url(r'^rosetta/', include('rosetta.urls')),
+    )
