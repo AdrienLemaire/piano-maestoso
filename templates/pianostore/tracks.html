@@ -1,0 +1,72 @@
+{% extends "pianostore/base.html" %}
+ 
+{% load i18n %}
+ 
+{% block head_title %}{% blocktrans %}Library{% endblocktrans %}{% endblock %}
+ 
+{% block body %}
+ 
+    <h1>
+        {% ifequal list 'all' %}
+            {% trans "All Tracks" %}
+        {% endifequal %}
+        {% ifequal list 'user' %}
+            {{ username }} {% trans "tracks" %}
+        {% endifequal %}
+        {% ifequal list 'yours' %}
+            {% trans "Your Tracks" %}
+        {% endifequal %}
+    </h1>
+ 
+    <!-- alternate -->
+    {% if tracks %}
+ 
+        <table class="pianostore">
+            {% for track in tracks %}
+                <tr class="{% cycle odd,even %}">
+                    <!-- meta -->
+                    <td class="meta" >
+                        <div class="details">{% blocktrans %}added by{% endblocktrans %} <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a></div>
+                        {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
+                        <a href="/pianostore/user_tracks/{{ track.adder.username }}"><i>{% blocktrans %}View all tracks added by {% endblocktrans %}{{ track.adder }}</i></a>
+                    </td>
+                    <!-- track info -->
+                    <td>
+                        <h3><a href="/pianostore/{{ track.id }}/track/">{{ track.title }}</a></h2>
+                        <div class="body">
+                            <strong><i>{{ track.publisher }}<br />{{ track.author }}<br /></strong></i>
+                            {{ track.description|linebreaks|truncatewords:50 }}
+                        </div>
+                        {% ifequal list 'yours' %}
+                            <table>
+                                <tr>
+                                    <td>
+                                        <!-- udpate track -->
+                                        <form method="GET" action="{% url update_track track.id %}">
+                                            <input type="submit" value="{% trans "Update Track" %}" />
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <!-- delete track -->
+                                        <form method="POST" action="{% url delete_track track.id %}">
+                                            <input type="submit" value="{% trans "Delete Track" %}" />
+                                        </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        {% endifequal %}
+                    </td>
+                    <!-- cover art -->
+                    <td>
+                        <div class="coverart" >{{ track.thumb|safe }}</div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+ 
+ 
+    {% else %}
+        <p>{% trans "No tracks yet." %}</p>
+    {% endif %}
+ 
+{% endblock %}

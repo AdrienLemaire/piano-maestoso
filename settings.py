@@ -202,7 +202,7 @@ INSTALLED_APPS = [
 
     # project
     "about",
-    "piano",
+    "pianostore",
 ]
 
 FIXTURE_DIRS = [
