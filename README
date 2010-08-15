@@ -2,14 +2,6 @@ INSTALLATION:
 ~~~~~~~~~~~~~
  - install python 2.6.X
  - install pinax : "pip install Pinax; pip install -r requirements/project.txt"
- - install videologue : "hg clone http://bitbucket.org/fivethreeo/django-videologue"
- - create a new entry in your crontab :
-        # Example: `crontab -e`
-        # add env and run every two minutes
-        PYTHONPATH=/path/to/python/site-packages/
-        */2     *     *     *     *         python /path/to/project/piano-maestoso/manage.py vlprocess
-If you use OS X, put this line at the end of your .vimrc to have the crontab
-working : au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 
  TREE :
  ~~~~~~

@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-PPS
+
 # Django settings for social pinax project.
 
 import os.path
@@ -189,7 +190,6 @@ INSTALLED_APPS = [
     "django_markup",
     "tagging_ext",
     "rosetta",
-    "videologue",
 
     # Pinax
     "pinax.apps.account",
