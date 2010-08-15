@@ -29,6 +29,8 @@ class Track(models.Model):
     adder = models.ForeignKey(User, related_name="added_tracks",
                               verbose_name=_('adder'))
     added = models.DateTimeField(_('added'), default=datetime.now)
+    track = models.FileField(upload_to='pianostore/uploads/')
+    trackfilename = models.CharField(max_length=255, blank=True, null=True)
 
     def get_absolute_url(self):
         return ("describe_track", [self.pk])

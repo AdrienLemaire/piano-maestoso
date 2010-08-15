@@ -11,6 +11,11 @@ class TrackForm(forms.ModelForm):
     Track Form: form associated to the Track model
     """
 
+    class Meta:
+        model = Track
+        fields = ('coverart', 'composer', 'artist', 'category',
+                  'description', 'title')
+
     def __init__(self, *args, **kwargs):
         super(TrackForm, self).__init__(*args, **kwargs)
         self.is_update = False
@@ -28,6 +33,4 @@ class TrackForm(forms.ModelForm):
                                               "in the library."))
         return self.cleaned_data
 
-    class Meta:
-        model = Track
-        fields = ('coverart', 'composer', 'artist', 'category', 'description', 'title')
+
