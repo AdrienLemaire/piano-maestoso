@@ -5,19 +5,19 @@ html, body {
 }
 body {
     /* Doesn't work with firefox */
-    background-image: url("/site_media/static/pinax/img/background2.svg");
+    background: url("/site_media/static/pinax/img/background2.svg");
     -o-background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
-
     margin: 0;
     color: #333;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 10pt;
 }
-.site_background {
+#site-background {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 60%;
+    left: 35%;
     z-index: -99;
 }
 a, a:visited {

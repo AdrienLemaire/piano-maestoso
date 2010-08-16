@@ -37,16 +37,11 @@
             {% block extra_head %}{% endblock %}
         {% endblock %}
     </head>
-    
+
     <body class="{% block body_class %}{% endblock %}">
-        {% comment %}
-        <object id="site_background" data="{{ STATIC_URL }}pinax/img/background2.svg" type="image/svg+xml"
-            width="400" height="300">
-          <embed src="{{ STATIC_URL }}pinax/img/background2.svg" type="image/svg+xml"
-              width="400" height="300"
-              pluginspage="http://www.adobe.com/svg/viewer/install/" />
-        </object>
-        {% endcomment %}
+        {% if not svg_background %}
+            <img id="site-background" src="{{ STATIC_URL }}pinax/img/background.png" />
+        {% endif %}
 
         {% if site_wide_announcements %}
             <div id="site_wide_announcements">
