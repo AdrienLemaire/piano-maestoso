@@ -27,7 +27,7 @@ ul.tabs li {
     /*margin: 10 0px; [> to compensate for border <]*/
     background: #222 url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
     padding: 5px 10px 6px;
-    margin : 10px 0;
+    margin : 10px 70px 0;
     font-weight: bold;
     line-height: 1;
     -moz-border-radius: 5px;
