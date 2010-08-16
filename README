@@ -3,8 +3,15 @@ INSTALLATION:
  - install python 2.6.X
  - install pinax : "pip install Pinax; pip install -r requirements/project.txt"
 
+
+TO DO:
+~~~~~~
+ - Google site verification
+
+
  TREE :
  ~~~~~~
+
 
 .
 |-- README
@@ -34,7 +41,6 @@ INSTALLATION:
 |       `-- views.pyc
 |-- context_processors.py
 |-- context_processors.pyc
-|-- crontab-script.py
 |-- deploy
 |   |-- __init__.py
 |   |-- pinax.fcgi
@@ -273,8 +279,9 @@ INSTALLATION:
 |   |-- css
 |   |   `-- site_tabs.css
 |   |-- pianostore
-|   |   `-- css
-|   |       `-- pianostore.css
+|   |   |-- css
+|   |   |   `-- pianostore.css
+|   |   `-- uploads
 |   `-- pinax
 |       `-- img
 |           `-- logo.png
@@ -298,9 +305,6 @@ INSTALLATION:
 |-- settings.py
 |-- settings.pyc
 |-- site_media
-|   |-- media
-|   |   `-- pianostore
-|   |       `-- thumb_100_100
 |   `-- static
 |       |-- README
 |       |-- admin
@@ -426,8 +430,6 @@ INSTALLATION:
 |       |   `-- openid-icon.png
 |       |-- locations
 |       |   `-- locations.js
-|       |-- pianostore
-|       |   `-- css
 |       |-- pinax
 |       |   |-- css
 |       |   |   |-- accounts.css
@@ -1497,6 +1499,7 @@ INSTALLATION:
 |   |   `-- what_next.html
 |   |-- account
 |   |   `-- other_services.html
+|   |-- base.html
 |   |-- friends_app
 |   |   |-- contacts.html
 |   |   |-- invitations.html
@@ -1526,7 +1529,4 @@ INSTALLATION:
 |-- urls.py
 `-- urls.pyc
 
-177 directories, 1341 files
-
-
-
+173 directories, 1341 files
