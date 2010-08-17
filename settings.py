@@ -248,6 +248,7 @@ EMAIL_DEBUG = DEBUG
 ugettext = lambda s: s
 LANGUAGES = [
     ("en", u"English"),
+    ("fr", u"Français"),
 ]
 
 # URCHIN_ID = "ua-..."

@@ -11,7 +11,7 @@ body.locations #tab_locations a,
 body.inbox #tab_inbox a,
 body.pianostore #tab_pianostore a
 {
-    color: #FFF; /* selected tab text colour */
+    color: #CCC; /* selected tab text colour */
 }
 body.profile #tab_profile,
 body.blogs #tab_blogs,
@@ -24,9 +24,9 @@ body.locations #tab_locations,
 body.inbox #tab_inbox,
 body.pianostore #tab_pianostore 
 {
-    margin: 0; /* to compensate for border */
-    padding: 5px 0 5px;
-    background-color: #DEF; /* selected tab colour */
+    /*margin: 0; [> to compensate for border <]*/
+    /*padding: 5px 0 5px;*/
+    background-color: #333; /* selected tab colour */
     border-left: 1px solid #000; /* tab border */
     border-top: 1px solid #000; /* tab border */
     border-right: 1px solid #000; /* tab border */
