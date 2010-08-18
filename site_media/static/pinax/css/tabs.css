@@ -8,23 +8,35 @@
 #right_tabs {
     position: absolute;
     right: 15px;
-    bottom: -1px; /* must be same thickness as tab border */
+    /*bottom: -1px; [> must be same thickness as tab border <]*/
 }
 
 ul.tabs a, ul.tabs a:visited {
-    color: #444; /* unselected tab text colour */
+    color: #FFF; /* unselected tab text colour */
     font-weight: bold;
     text-decoration: none;
 }
-ul.tabs a:hover {
-    color: #666; /* unselected tab text hover colour */
+ul.tabs li:hover {
+    background-color: #111; /* unselected tab text hover colour */
 }
 ul.tabs li {
     list-style-type: none;
-    display: inline;
-    background-color: #DDD; /* unselected tab colour */
-    padding: 5px 0 4px;
-    margin: 0 1px; /* to compensate for border */
+    /*[>display: inline;<]*/
+    /*background-color: #DDD; [> unselected tab colour <]*/
+    /*padding: 5px 0 4px;*/
+    /*margin: 10 0px; [> to compensate for border <]*/
+    background: #222 url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
+    padding: 5px 10px 6px;
+    margin : 10px 70px 0;
+    font-weight: bold;
+    line-height: 1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
 }
 ul.tabs li a {
     padding: 5px 12px;
