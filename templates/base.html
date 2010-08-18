@@ -20,8 +20,8 @@
                 zoom: 1; /* trigger hasLayout */
             }
         </style><![endif]-->
-        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/base.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/tabs.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/base_piano_maestoso.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/tabs_piano_maestoso.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/facebox.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/announcements.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/accounts.css" />
@@ -40,6 +40,7 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% if not svg_background %}
+	    <span>{{ svg_background }}</span>
             <img id="site-background" src="{{ STATIC_URL }}pinax/img/background.png" />
         {% endif %}
 
