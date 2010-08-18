@@ -15,6 +15,8 @@ from forms import TrackForm
 def tracks(request):
     """ Return the all tracks list, ordered by added date. """
     tracks = Track.objects.all().order_by("-added")
+    import pdb; pdb.set_trace()
+    
     return render_to_response("pianostore/tracks.html", {
         "tracks": tracks,
         "list": 'all',

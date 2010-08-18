@@ -3,3 +3,4 @@
 *pyc
 *.db
 .venv
+site_media/media/*

@@ -2,6 +2,7 @@
  
 {% load i18n %}
 {% load uni_form_tags %}
+{% load avatar_tags %}
  
 {% block head_title %}{% blocktrans %}Track Description{% endblocktrans %}{% endblock %}
  
@@ -42,6 +43,7 @@
         </p>
         <p class="meta">
             <!-- meta -->
+            <div class="avatar" >{% avatar book.adder 40 %}</div>
             <div class="details">
                 {% blocktrans %}added by{% endblocktrans %}
                 <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a>
