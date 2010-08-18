@@ -4,3 +4,4 @@
 *.db
 .venv
 site_media/media/*
+local_settings.py
