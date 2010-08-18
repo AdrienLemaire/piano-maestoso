@@ -116,7 +116,7 @@
                     
                 {% endif %} {# is me #}
                 
-                <h2>{% trans "Tracks" %}</h2>
+                <h2>{% trans "Piano" %}</h2>
                 {% if other_user.added_tracks.all %}
                     <table class="pianostore narrow">
                         {% for track in other_user.added_tracks.all.select_related %}
