@@ -1,0 +1,29 @@
+/* PIANOSTORE */
+
+table.narrow {
+    width: 500px;
+}
+table.pianostore td {
+    vertical-align: top;
+    padding: 5px;
+}
+table.pianostore td h2 {
+    margin: 0;
+    padding: 0;
+}
+table.pianostore td.vote {
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+.pianostore .even {
+    background-color: #FAFAFA;
+}
+.pianostore .odd {
+    background-color: #F3F3F3;
+}
+div.url {
+    color: #666;
+    font-size: 90%;
+    font-style: italic;
+}

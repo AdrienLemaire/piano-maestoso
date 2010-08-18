@@ -4,11 +4,21 @@ html, body {
     height: 100%;
 }
 body {
-    background-color: #FFF;
+    /* Doesn't work with firefox */
+    background: url("/site_media/static/pinax/img/background2.svg");
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
     margin: 0;
     color: #333;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 10pt;
+}
+#site-background {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    left: 35%;
+    z-index: -99;
 }
 a, a:visited {
     color: #13C;
@@ -88,8 +98,8 @@ h1 {
 /* HEADER */
 
 #tabhead {
-    background: #035 url('../img/heading.png') left top repeat-x;
-    border-bottom: 1px solid #000; /* tab border */
+    /*background: #035 url('../img/heading.png') left top repeat-x;*/
+    /*border-bottom: 1px solid #000; [> tab border <]*/
     position: relative;
 }
 #tabhead .logo {
@@ -98,17 +108,18 @@ h1 {
     padding-top: 0;
 }
 #tabhead .logo img {
-    width: 190px;
-    height: 79px;
+    /*width: 190px;*/
+    margin-top: 25px;
+    height: 30px;
 }
 #tabhead .login {
     position: absolute;
     top: 6px;
     right: 15px;
-    color: #DEF; /* login bar text colour */
+    color: #555; /* login bar text colour */
 }
 #tabhead .login a, #tabhead .login a:visited {
-    color: #DEF; /* login bar link colour */
+    color: #aaa; /* login bar link colour */
 }
 #tabhead .login a:hover {
     color: #FFF; /* login bar link hover colour */
@@ -121,11 +132,11 @@ h1 {
 #subnav {
     margin: 0;
     padding: 0;
-    background: #DEF; /* tab colour */
-    border-bottom: 1px solid #9BC;
+    /*background: #DEF; [> tab colour <]*/
+    /*border-bottom: 1px solid #9BC;*/
 }
 #subnav ul {
-    float: right;
+    float: left;
     margin: 0 20px;
     padding: 0;
 }
