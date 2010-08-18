@@ -2,6 +2,7 @@
  
 {% load i18n %}
 {% load avatar_tags %}
+{% load pagination_tags %}
  
 {% block head_title %}{% blocktrans %}Piano store{% endblocktrans %}{% endblock %}
  
@@ -21,13 +22,14 @@
  
     <!-- alternate -->
     {% if tracks %}
- 
+    {% autopaginate tracks 5 %}
+
         <table class="pianostore">
             {% for track in tracks %}
                 <tr class="{% cycle odd,even %}">
                     <!-- meta -->
                     <td class="meta" >
-                        <div class="avatar" >{% avatar book.adder 40 %}</div>
+                        <div class="avatar" >{% avatar track.adder 40 %}</div>
                         <div class="details">{% blocktrans %}added by{% endblocktrans %} <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a></div>
                         {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
                         <a href="/pianostore/user_tracks/{{ track.adder.username }}"><i>{% blocktrans %}View all tracks added by {% endblocktrans %}{{ track.adder }}</i></a>
@@ -67,7 +69,7 @@
             {% endfor %}
         </table>
  
- 
+    {% paginate %}
     {% else %}
         <p>{% trans "No tracks yet." %}</p>
     {% endif %}
