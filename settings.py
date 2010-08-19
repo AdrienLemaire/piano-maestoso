@@ -23,7 +23,7 @@ INTERNAL_IPS = [
 ]
 
 ADMINS = [
-    ("Adrien LEMAIRE", "lemaire.adrien@gmail.com"),
+     # ('Your Name', 'your_email@domain.com'),
 ]
 
 MANAGERS = ADMINS
@@ -44,7 +44,7 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "US/Eastern"
+TIME_ZONE = "Europe/Paris"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -73,8 +73,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
 # Example: "http://media.lawrence.com"
 STATIC_URL = "/site_media/static/"
 
-FLOWPLAYER = "/site_media/flowplayer/flowplayer-3.2.2.swf"
-
 # Additional directories which hold static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "media"),
@@ -87,7 +85,7 @@ STATICFILES_DIRS = [
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "#b&ae3c1fpc&j@g9mwi6ceb43l1!8y^^*%cs6f&_&11(6w_k%#"
+SECRET_KEY = ""
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = [
@@ -248,8 +246,8 @@ EMAIL_DEBUG = DEBUG
 
 ugettext = lambda s: s
 LANGUAGES = [
-    ("en", u"English"),
     ("fr", u"Français"),
+    ("en", u"English"),
 ]
 
 # URCHIN_ID = "ua-..."
