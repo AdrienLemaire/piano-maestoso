@@ -147,5 +147,5 @@ if settings.SERVE_MEDIA:
 
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
-        url(r'^rosetta/', include('rosetta.urls')),
+        url(r'^translation/', include('rosetta.urls')),
     )
