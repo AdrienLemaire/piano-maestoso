@@ -60,6 +60,7 @@
 
 {% block footer %}
 <div class="legal">
+    {{ debug }}
     {% trans "&copy; 2010 &lt;your company here&gt;" %}
     - <a href="{% url about %}">{% trans "About" %}</a>
     - <a href="{% url terms %}">{% trans "Terms of Service" %}</a>
@@ -71,6 +72,8 @@
 {% block extra_body_base %}
     {% ga %}
     <script src="{{ STATIC_URL }}pinax/js/topics.js"></script>
-    <script src="https://getfirebug.com/firebug-lite.js"></script> <!-- To remove at the end -->
+    {% if debug %}
+        <script src="https://getfirebug.com/firebug-lite.js"></script> <!-- To remove at the end -->
+    {% endif %}
     {% block extra_body %}{% endblock %}
 {% endblock %}
