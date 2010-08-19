@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # This script works only in linux
-# You should put your virtualenv in ~/Envs
 WORKON_HOME=$(readlink -f ~/Envs)
-PROJECT_ROOT=$(readlink -f ..)
+PROJECT_ROOT=$(readlink -f ~/piano-maestoso/)
 
 # activate virtual environment
-. $WORKON_HOME/pinax-env/bin/activate
+. $WORKON_HOME/piano-maestoso/bin/activate
 
 python manage.py retry_deferred >> $PROJECT_ROOT/logs/cron_mail.log 2>&1
