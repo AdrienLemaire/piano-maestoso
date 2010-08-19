@@ -20,8 +20,6 @@ from pinax.apps.photos.models import Image
 from pinax.apps.topics.models import Topic
 from pinax.apps.tribes.models import Tribe
 
-from views import home
-
 handler500 = "pinax.views.server_error"
 
 
