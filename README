@@ -1,18 +1,18 @@
+This website is intending to allow a small community of piano lovers to share
+their music and give comments on it.
+
+
+
 INSTALLATION:
 ~~~~~~~~~~~~~
  - install python 2.6.X
- - install pinax : "pip install Pinax; pip install -r requirements/project.txt"
- - install django-rosetta
+ - install pinax : "pip install Pinax"
+ - install requirements : "pip install -r requirements/project.txt"
 
-
-TO DO:
-~~~~~~
- - Google site verification
 
 
  TREE :
  ~~~~~~
-
 
 .
 |-- apps
@@ -21,122 +21,13 @@ TO DO:
 |-- deploy
 |-- fixtures
 |-- locale
-|   |-- ar
-|   |   `-- LC_MESSAGES
-|   |-- bg
-|   |   `-- LC_MESSAGES
-|   |-- bn
-|   |   `-- LC_MESSAGES
-|   |-- bs
-|   |   `-- LC_MESSAGES
-|   |-- ca
-|   |   `-- LC_MESSAGES
-|   |-- cs
-|   |   `-- LC_MESSAGES
-|   |-- cy
-|   |   `-- LC_MESSAGES
-|   |-- da
-|   |   `-- LC_MESSAGES
-|   |-- de
-|   |   `-- LC_MESSAGES
-|   |-- el
-|   |   `-- LC_MESSAGES
 |   |-- en
 |   |   `-- LC_MESSAGES
-|   |-- es
-|   |   `-- LC_MESSAGES
-|   |-- es_AR
-|   |   `-- LC_MESSAGES
-|   |-- et
-|   |   `-- LC_MESSAGES
-|   |-- eu
-|   |   `-- LC_MESSAGES
-|   |-- fa
-|   |   `-- LC_MESSAGES
-|   |-- fi
-|   |   `-- LC_MESSAGES
-|   |-- fr
-|   |   `-- LC_MESSAGES
-|   |-- fy_NL
-|   |   `-- LC_MESSAGES
-|   |-- ga
-|   |   `-- LC_MESSAGES
-|   |-- gl
-|   |   `-- LC_MESSAGES
-|   |-- he
-|   |   `-- LC_MESSAGES
-|   |-- hi
-|   |   `-- LC_MESSAGES
-|   |-- hr
-|   |   `-- LC_MESSAGES
-|   |-- hu
-|   |   `-- LC_MESSAGES
-|   |-- is
-|   |   `-- LC_MESSAGES
-|   |-- it
-|   |   `-- LC_MESSAGES
-|   |-- ja
-|   |   `-- LC_MESSAGES
-|   |-- ka
-|   |   `-- LC_MESSAGES
-|   |-- km
-|   |   `-- LC_MESSAGES
-|   |-- kn
-|   |   `-- LC_MESSAGES
-|   |-- ko
-|   |   `-- LC_MESSAGES
-|   |-- lt
-|   |   `-- LC_MESSAGES
-|   |-- lv
-|   |   `-- LC_MESSAGES
-|   |-- mk
-|   |   `-- LC_MESSAGES
-|   |-- nl
-|   |   `-- LC_MESSAGES
-|   |-- no
-|   |   `-- LC_MESSAGES
-|   |-- pl
-|   |   `-- LC_MESSAGES
-|   |-- pt
-|   |   `-- LC_MESSAGES
-|   |-- pt_BR
-|   |   `-- LC_MESSAGES
-|   |-- ro
-|   |   `-- LC_MESSAGES
-|   |-- ru
-|   |   `-- LC_MESSAGES
-|   |-- sk
-|   |   `-- LC_MESSAGES
-|   |-- sl
-|   |   `-- LC_MESSAGES
-|   |-- sq
-|   |   `-- LC_MESSAGES
-|   |-- sr
-|   |   `-- LC_MESSAGES
-|   |-- sr_Latn
-|   |   `-- LC_MESSAGES
-|   |-- sv
-|   |   `-- LC_MESSAGES
-|   |-- ta
-|   |   `-- LC_MESSAGES
-|   |-- te
-|   |   `-- LC_MESSAGES
-|   |-- th
-|   |   `-- LC_MESSAGES
-|   |-- tr
-|   |   `-- LC_MESSAGES
-|   |-- uk
-|   |   `-- LC_MESSAGES
-|   |-- vi
-|   |   `-- LC_MESSAGES
-|   |-- zh_CN
-|   |   `-- LC_MESSAGES
-|   `-- zh_TW
+|   `-- fr
 |       `-- LC_MESSAGES
 |-- media
 |   |-- css
 |   |-- pianostore
-|   |   |-- css
 |   |   `-- uploads
 |   `-- pinax
 |       |-- css
@@ -145,30 +36,53 @@ TO DO:
 |-- pianostore
 |   |-- locale
 |   |   `-- fr
+|   |       `-- LC_MESSAGES
+|   |-- media
+|   |   `-- pianostore
+|   |       `-- css
 |   `-- templates
 |       `-- pianostore
 |-- requirements
 |-- site_media
 |   |-- media
 |   |   `-- pianostore
+|   |       `-- thumb_100_100
 |   `-- static
 |       |-- admin
+|       |   |-- css
+|       |   |-- img
+|       |   `-- js
 |       |-- ajax_validation
+|       |   `-- js
 |       |-- bookmarks
+|       |   |-- css
+|       |   `-- img
 |       |-- css
 |       |-- debug_toolbar
+|       |   |-- css
+|       |   |-- img
+|       |   `-- js
 |       |-- frontendadmin
+|       |   `-- css
 |       |-- images
 |       |-- locations
 |       |-- pianostore
+|       |   `-- css
 |       |-- pinax
+|       |   |-- css
+|       |   |-- img
+|       |   `-- js
 |       |-- tagging_ext
 |       |-- tasks
+|       |   |-- css
+|       |   `-- js
 |       |-- tribes
+|       |   `-- css
 |       `-- uni_form
 |-- templates
 |   |-- about
 |   |-- account
+|   |-- admin
 |   |-- friends_app
 |   |-- notification
 |   |-- photos
@@ -176,4 +90,4 @@ TO DO:
 |   `-- tags
 `-- tests
 
-160 directories
+74 directories
