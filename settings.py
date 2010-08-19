@@ -254,6 +254,8 @@ LANGUAGES = [
 
 YAHOO_MAPS_API_KEY = "..."
 
+WIKI_REQUIRES_LOGIN = True
+
 class NullStream(object):
     def write(*args, **kwargs):
         pass

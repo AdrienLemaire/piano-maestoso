@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load uni_form_tags %}
 {% load avatar_tags %}
+{% load comments_tag %}
  
 {% block head_title %}{% blocktrans %}Track Description{% endblocktrans %}{% endblock %}
  
@@ -49,6 +50,9 @@
                 <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a>
             </div>
             {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
+            <!-- comments -->
+            <h3 id="comments">{% blocktrans %}Comments on this Track{% endblocktrans %}:</h3>
+            {% comments track %}
         </p>
  
 {% endblock %}

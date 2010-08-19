@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load avatar_tags %}
 {% load pagination_tags %}
+{% load threadedcommentstags %}
  
 {% block head_title %}{% blocktrans %}Piano store{% endblocktrans %}{% endblock %}
  
@@ -41,6 +42,11 @@
                             <strong><i>{{ track.publisher }}<br />{{ track.author }}<br /></strong></i>
                             {{ track.description|linebreaks|truncatewords:50 }}
                         </div>
+                        <!-- comments -->
+                        <img src="{{ STATIC_URL }}pinax/img/silk/icons/comment.png" border="0" class="noborder" align="absmiddle" />
+                            <a href="/pianostore/{{ track.id }}/track/#comments"
+                                >{% get_comment_count for track as commentcount %}{{ commentcount }} Comments</a>
+                            <br />
                         {% ifequal list 'yours' %}
                             <table>
                                 <tr>
