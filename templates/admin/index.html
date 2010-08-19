@@ -13,14 +13,16 @@
 <div id="content-main">
 
 <div class="module">
-    <table>
-        <caption>{% trans "System Translations" %} (Rosetta)</caption>
-        <tr class="row2">
-            <th scope="row"><a href="/translation/">Rosetta</a></th>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+    {% if request.path == "/admin/" %}
+        <table>
+            <caption>{% trans "System Translations" %} (Rosetta)</caption>
+            <tr class="row2">
+                <th scope="row"><a href="/translation/">Rosetta</a></th>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    {% endif %}
 </div>
 
 {% if app_list %}
