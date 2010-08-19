@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-18 00:17+0100\n"
+"POT-Creation-Date: 2010-08-19 19:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,47 +81,47 @@ msgstr ""
 msgid "Add a track"
 msgstr ""
 
-#: templates/pianostore/track.html:6
+#: templates/pianostore/track.html:7
 msgid "Track Description"
 msgstr ""
 
-#: templates/pianostore/track.html:29 templates/pianostore/tracks.html:46
+#: templates/pianostore/track.html:30 templates/pianostore/tracks.html:50
 msgid "Update Track"
 msgstr ""
 
-#: templates/pianostore/track.html:36 templates/pianostore/tracks.html:53
+#: templates/pianostore/track.html:37 templates/pianostore/tracks.html:57
 msgid "Delete Track"
 msgstr ""
 
-#: templates/pianostore/track.html:46 templates/pianostore/tracks.html:29
+#: templates/pianostore/track.html:48 templates/pianostore/tracks.html:33
 msgid "added by"
 msgstr ""
 
-#: templates/pianostore/track.html:49 templates/pianostore/tracks.html:30
+#: templates/pianostore/track.html:51 templates/pianostore/tracks.html:34
 msgid "on"
 msgstr ""
 
-#: templates/pianostore/tracks.html:5
+#: templates/pianostore/tracks.html:7
 msgid "Piano store"
 msgstr ""
 
-#: templates/pianostore/tracks.html:11
+#: templates/pianostore/tracks.html:13
 msgid "All Tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:14
+#: templates/pianostore/tracks.html:16
 msgid "tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:17
+#: templates/pianostore/tracks.html:19
 msgid "Your Tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:31
+#: templates/pianostore/tracks.html:35
 msgid "View all tracks added by "
 msgstr ""
 
-#: templates/pianostore/tracks.html:70
+#: templates/pianostore/tracks.html:74
 msgid "No tracks yet."
 msgstr ""
 
