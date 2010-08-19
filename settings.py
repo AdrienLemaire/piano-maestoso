@@ -138,6 +138,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "friends_app.context_processors.invitations",
 
     "piano-maestoso.context_processors.combined_inbox_count",
+    "piano-maestoso.context_processors.svg_proc",
 ]
 
 COMBINED_INBOX_COUNT_SOURCES = [
