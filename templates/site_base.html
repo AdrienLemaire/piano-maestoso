@@ -70,6 +70,8 @@
 {% block extra_body_base %}
     {% ga %}
     <script src="{{ STATIC_URL }}pinax/js/topics.js"></script>
-    <script src="https://getfirebug.com/firebug-lite.js"></script> <!-- To remove at the end -->
+    {% if debug %}
+        <script src="https://getfirebug.com/firebug-lite.js"></script> <!-- To remove at the end -->
+    {% endif %}
     {% block extra_body %}{% endblock %}
 {% endblock %}

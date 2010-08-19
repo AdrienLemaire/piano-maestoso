@@ -40,10 +40,9 @@ bookmarks_feed_dict = {"feed_dict": {"": BookmarkFeed }}
 
 
 urlpatterns = patterns("",
-    #url(r"^$", direct_to_template, {
-        #"template": "homepage.html",
-    #} ,name="home"),
-    url(r"^$", home, name="home"),
+    url(r"^$", direct_to_template, {
+        "template": "homepage.html",
+    } ,name="home"),
     url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^about/", include("about.urls")),
