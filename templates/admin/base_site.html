@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{% if SITE_NAME %}{{ SITE_NAME }} : {% endif %}{{ title }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Piano Maestoso administration' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
