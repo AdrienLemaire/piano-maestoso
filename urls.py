@@ -24,7 +24,7 @@ from pinax.apps.topics.models import Topic
 from pinax.apps.tribes.models import Tribe
 
 # from internal apps
-from pianostore.sitemaps import TrackSitemap
+from pianostore.sitemap import TrackSitemap
 
 handler500 = "pinax.views.server_error"
 
@@ -49,7 +49,7 @@ blog_info_dict = {
 }
 sitemaps = {
         'flatpages': FlatPageSitemap,
-        'blog': GenericSitemap(info_dict, priority=0.6, changefreq='daily'),
+        'blog': GenericSitemap(blog_info_dict, priority=0.6, changefreq='daily'),
         'pianostore': TrackSitemap,
 }
 
