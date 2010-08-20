@@ -70,7 +70,7 @@
 {% block extra_body_base %}
     {% ga %}
     <script src="{{ STATIC_URL }}pinax/js/topics.js"></script>
-    {% if debug %}
+    {% if debug and svg_background %}
         <script src="https://getfirebug.com/firebug-lite.js"></script>
     {% endif %}
     {% block extra_body %}{% endblock %}
