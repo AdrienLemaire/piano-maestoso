@@ -1,10 +1,13 @@
+# from django
 from django.conf import settings
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
+from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
 from django.contrib import admin
 admin.autodiscover()
 
+# from pinax
 from bookmarks.feeds import BookmarkFeed
 from bookmarks.models import BookmarkInstance
 from microblogging.feeds import TweetFeedAll, TweetFeedUser, TweetFeedUserWithFriends
@@ -20,21 +23,35 @@ from pinax.apps.photos.models import Image
 from pinax.apps.topics.models import Topic
 from pinax.apps.tribes.models import Tribe
 
+# from internal apps
+from pianostore.sitemaps import TrackSitemap
+
 handler500 = "pinax.views.server_error"
 
 
+# Feeds
 tweets_feed_dict = {"feed_dict": {
     "all": TweetFeedAll,
     "only": TweetFeedUser,
     "with_friends": TweetFeedUserWithFriends,
 }}
-
 blogs_feed_dict = {"feed_dict": {
     "all": BlogFeedAll,
     "only": BlogFeedUser,
 }}
-
 bookmarks_feed_dict = {"feed_dict": {"": BookmarkFeed }}
+
+
+# Sitemaps
+blog_info_dict = {
+    'queryset': Post.objects.all(),
+    'date_field': 'updated_at',
+}
+sitemaps = {
+        'flatpages': FlatPageSitemap,
+        'blog': GenericSitemap(info_dict, priority=0.6, changefreq='daily'),
+        'pianostore': TrackSitemap,
+}
 
 
 urlpatterns = patterns("",
@@ -70,6 +87,8 @@ urlpatterns = patterns("",
     url(r"^feeds/tweets/(.*)/$", "django.contrib.syndication.views.feed", tweets_feed_dict),
     url(r"^feeds/posts/(.*)/$", "django.contrib.syndication.views.feed", blogs_feed_dict),
     url(r"^feeds/bookmarks/(.*)/?$", "django.contrib.syndication.views.feed", bookmarks_feed_dict),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.index', {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r"^pianostore/", include("pianostore.urls")),
 )
 

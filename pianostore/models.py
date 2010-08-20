@@ -77,3 +77,12 @@ class Track(models.Model):
         else:
             return '<img src=%s />' % (link)
     fullpicture.allow_tags = True
+
+    #def save(self, force_insert=False, force_update=False):
+        #super(Entry, self).save(force_insert, force_update)
+        #try:
+            #ping_google()
+        #except Exception:
+            ## Bare 'except' because we could get a variety
+            ## of HTTP-related exceptions.
+            #pass

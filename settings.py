@@ -155,6 +155,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.markup",
+    "django.contrib.sitemaps",
 
     "pinax.templatetags",
 
