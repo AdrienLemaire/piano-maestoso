@@ -2,7 +2,8 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
+from django.contrib.sitemaps import GenericSitemap
+#from django.contrib.sitemaps import FlatPageSitemap
 
 from django.contrib import admin
 admin.autodiscover()
@@ -48,7 +49,7 @@ blog_info_dict = {
     'date_field': 'updated_at',
 }
 sitemaps = {
-        'flatpages': FlatPageSitemap,
+        #'flatpages': FlatPageSitemap,
         'blog': GenericSitemap(blog_info_dict, priority=0.6, changefreq='daily'),
         'pianostore': TrackSitemap,
 }
