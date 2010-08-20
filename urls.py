@@ -41,6 +41,9 @@ urlpatterns = patterns("",
     url(r"^$", direct_to_template, {
         "template": "homepage.html",
     } ,name="home"),
+    url(r"^ydncNC5k8.html$", direct_to_template, {
+        "template": "ydncNC5k8.html",
+    } ,name="yahoo auth"),
     url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^about/", include("about.urls")),

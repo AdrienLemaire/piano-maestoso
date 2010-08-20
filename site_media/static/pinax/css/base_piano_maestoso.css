@@ -1,24 +1,25 @@
 /* GENERAL */
 
 html, body {
-    height: 100%;
+    min-height: 100%;
+    min-width: 1000px;
 }
 body {
     /* Doesn't work with firefox */
     background: url("/site_media/static/pinax/img/background2.svg");
-    -o-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
+    -o-background-size: 105% 100%;
+    -webkit-background-size: 105% 100%;
     margin: 0;
     color: #333;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 10pt;
 }
-#site-background {
-    position: absolute;
-    height: 100%;
-    width: 60%;
-    left: 35%;
-    z-index: -99;
+body.site-background {
+    background: url("/site_media/static/pinax/img/background.png");
+    background-repeat: no-repeat;
+    background-position: 85% 0;
+    -moz-background-size: 60% 100%;
+    background-origin: content-box;
 }
 a, a:visited {
     color: #13C;
@@ -50,7 +51,8 @@ h1 {
     clear: both;
     margin: 0 auto;
     padding: 10px;
-    width: 800px;
+    max-width: 770px;
+    float: left;
 }
 #footer {
     color: #999; /* footer text colour */
