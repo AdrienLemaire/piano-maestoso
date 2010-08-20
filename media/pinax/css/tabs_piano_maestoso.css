@@ -12,20 +12,12 @@
 }
 
 ul.tabs a, ul.tabs a:visited {
-    color: #FFF; /* unselected tab text colour */
     font-weight: bold;
     text-decoration: none;
 }
-ul.tabs li:hover {
-    background-color: #111; /* unselected tab text hover colour */
-}
 ul.tabs li {
     list-style-type: none;
-    /*[>display: inline;<]*/
-    /*background-color: #DDD; [> unselected tab colour <]*/
-    /*padding: 5px 0 4px;*/
-    /*margin: 10 0px; [> to compensate for border <]*/
-    background: #222 url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
+    background: url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
     padding: 5px 10px 6px;
     margin : 10px 70px 0;
     font-weight: bold;
@@ -43,4 +35,24 @@ ul.tabs li a {
 }
 ul.tabs {
     margin: 0 0 5px;
+}
+
+/* Colors tabs */
+ul.tabs .black a, ul.tabs .black a:visited {
+    color: #fff; /* unselected tab text colour */
+}
+ul.tabs .white a, ul.tabs .white a:visited {
+    color: #000; /* unselected tab text colour */
+}
+ul.tabs li.black:hover {
+    background-color: #222; /* unselected tab text hover colour */
+}
+ul.tabs li.white:hover {
+    background-color: #ddd; /* unselected tab text hover colour */
+}
+ul.tabs li.black {
+    background-color: #000;
+}
+ul.tabs li.white {
+    background-color: #fff;
 }
