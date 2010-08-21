@@ -78,7 +78,7 @@ def update_track(request, track_id):
     """ Update a track given its id. """
     track = Track.objects.get(id=track_id)
     if request.method == "POST":
-        track_form = TrackForm(request.POST, request.FILES, instance=track)
+        track_form = TrackForm(request.user, request.POST, request.FILES, instance=track)
         track_form.is_update = True
         if request.user == track.adder:
             if track_form.is_valid():

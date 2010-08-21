@@ -90,27 +90,25 @@ class Track(models.Model):
 
     def fullpicture(self):
         """ Get full picture <a>. """
-        link = "%s%s" % (settings.MEDIA_URL, self.image)
-        if link is None:
-            return '<a href="#" target="_blank">NO IMAGE</a>'
-        else:
+        if self.image:
+            link = "%s" % self.image.image.url
             return '<img src=%s />' % (link)
     fullpicture.allow_tags = True
 
     def _get_thumb_url(self, folder, size):
         """ get a thumbnail giver a folder and a size. """
         if not self.image:
-            return '#'
-        upload_to = path.dirname(self.image.path)
-        tiny = path.join(upload_to, folder, path.basename(self.image.path))
+            return
+        upload_to = path.dirname(self.image.image.path)
+        tiny = path.join(upload_to, folder, path.basename(self.image.image.path))
         tiny = path.normpath(tiny)
         if not path.exists(tiny):
             import Image
-            im = Image.open(self.image.path)
+            im = Image.open(self.image.image.path)
             im.thumbnail(size, Image.ANTIALIAS)
             im.save(tiny, 'JPEG')
-        return path.join(path.dirname(self.image.url), folder,
-                         path.basename(self.image.path)).replace('\\', '/')
+        return path.join(path.dirname(self.image.image.url), folder,
+                         path.basename(self.image.image.path)).replace('\\', '/')
 
     def get_thumb_url(self):
         return self._get_thumb_url('thumb_100_100', (100, 100))
@@ -118,10 +116,6 @@ class Track(models.Model):
     def thumb(self):
         """ Get thumb <a>. """
         link = self.get_thumb_url()
-        if link is None:
-            return '<a href="#" target="_blank">NO IMAGE</a>'
-        else:
+        if link:
             return '<img src=%s />' % (link)
     thumb.allow_tags = True
-
-

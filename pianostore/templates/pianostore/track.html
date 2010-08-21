@@ -10,7 +10,13 @@
 {% block body %}
     <h1>{{ track.title }}</h1>
         <p>
-             <div class="coverart" >{{ track.fullpicture|safe }}</div>
+             <div class="coverart" >
+                {% if track.fullpicture %}
+                    {{ track.fullpicture|safe }}
+                {% else %}
+                    <img src="{{ STATIC_URL }}pinax/img/silk/icons/picture_empty.png" border="0" class="noborder" align="absmiddle" />
+                {% endif %}
+            </div>
         </p>
         <p>
             <!-- track info -->
@@ -19,9 +25,9 @@
                 <strong><i>{{ track.artist }}<br />{{ track.composer }}<br /></strong></i>
                             {{ track.description|linebreaks }}
                 <video width="320" height="240" controls>
-                    <source src="{{ track.track_mp4 }}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                    <source src="{{ track.track_webm }}" type='video/webm; codecs="vp8, vorbis"'>
-                    <source src="{{ track.track_ogv }}"  type='video/ogg; codecs="theora, vorbis"'>
+                <source src="{{ MEDIA_URL }}{{ track.track_mp4 }}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="{{ MEDIA_URL }}{{ track.track_webm }}" type='video/webm; codecs="vp8, vorbis"'>
+                <source src="{{ MEDIA_URL }}{{ track.track_ogv }}"  type='video/ogg; codecs="theora, vorbis"'>
                     <p> {% blocktrans %}Your browser is old.{% endblocktrans %} <a href="{{ track.track_mp4 }}"> {% blocktrans %}Download this video instead.{% endblocktrans %}</a> </p> 
                 </video>
                 {% if not track.track_mp4 %}
