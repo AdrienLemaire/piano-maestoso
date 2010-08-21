@@ -3,7 +3,9 @@ from models import Track
 
 
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ('title', 'artist', 'composer', 'category', 'description',
-                    'added', 'adder', 'coverart')
+    list_display = ('original_track',
+                    'title', 'title_slug', 'artist',
+                    'composer', 'category', 'description', 'date_added',
+                    'adder', 'image')
 
 admin.site.register(Track, TrackAdmin)

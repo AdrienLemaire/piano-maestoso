@@ -32,14 +32,14 @@
                     <td class="meta" >
                         <div class="avatar" >{% avatar track.adder 40 %}</div>
                         <div class="details">{% blocktrans %}added by{% endblocktrans %} <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a></div>
-                        {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
+                        {% blocktrans %}on{% endblocktrans %} {{ track.date_added|date }}
                         <a href="/pianostore/user_tracks/{{ track.adder.username }}"><i>{% blocktrans %}View all tracks added by {% endblocktrans %}{{ track.adder }}</i></a>
                     </td>
                     <!-- track info -->
                     <td>
                         <h3><a href="/pianostore/{{ track.id }}/track/">{{ track.title }}</a></h2>
                         <div class="body">
-                            <strong><i>{{ track.publisher }}<br />{{ track.author }}<br /></strong></i>
+                            <strong><i>{{ track.artist }}<br />{{ track.composer }}<br /></strong></i>
                             {{ track.description|linebreaks|truncatewords:50 }}
                         </div>
                         <!-- comments -->
@@ -69,7 +69,13 @@
                     </td>
                     <!-- cover art -->
                     <td>
-                        <div class="coverart" >{{ track.thumb|safe }}</div>
+                        <div class="coverart" >
+                            {% if track.thumb %}
+                                {{ track.thumb|safe }}
+                            {% else %}
+                                <img src="{{ STATIC_URL }}pinax/img/silk/icons/picture_empty.png" border="0" class="noborder" align="absmiddle" />
+                            {% endif %}
+                        </div>
                     </td>
                 </tr>
             {% endfor %}

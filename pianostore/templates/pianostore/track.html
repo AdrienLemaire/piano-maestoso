@@ -10,14 +10,29 @@
 {% block body %}
     <h1>{{ track.title }}</h1>
         <p>
-             <div class="coverart" >{{ track.fullpicture|safe }}</div>
+             <div class="coverart" >
+                {% if track.fullpicture %}
+                    {{ track.fullpicture|safe }}
+                {% else %}
+                    <img src="{{ STATIC_URL }}pinax/img/silk/icons/picture_empty.png" border="0" class="noborder" align="absmiddle" />
+                {% endif %}
+            </div>
         </p>
         <p>
             <!-- track info -->
             <h3>{{ track.title }}</h2>
             <div class="body">
-                <strong><i>{{ track.publisher }}<br />{{ track.author }}<br /></strong></i>
+                <strong><i>{{ track.artist }}<br />{{ track.composer }}<br /></strong></i>
                             {{ track.description|linebreaks }}
+                <video width="320" height="240" controls>
+                <source src="{{ MEDIA_URL }}{{ track.track_mp4 }}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="{{ MEDIA_URL }}{{ track.track_webm }}" type='video/webm; codecs="vp8, vorbis"'>
+                <source src="{{ MEDIA_URL }}{{ track.track_ogv }}"  type='video/ogg; codecs="theora, vorbis"'>
+                    <p> {% blocktrans %}Your browser is old.{% endblocktrans %} <a href="{{ track.track_mp4 }}"> {% blocktrans %}Download this video instead.{% endblocktrans %}</a> </p> 
+                </video>
+                {% if not track.track_mp4 %}
+                    {% blocktrans %}<br />The video is currently being converted to web formats, please come back later{% endblocktrans %}
+                {% endif %}
             </div>
         </p>
         <p>
@@ -49,7 +64,7 @@
                 {% blocktrans %}added by{% endblocktrans %}
                 <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a>
             </div>
-            {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
+            {% blocktrans %}on{% endblocktrans %} {{ track.date_added|date }}
             <!-- comments -->
             <h3 id="comments">{% blocktrans %}Comments on this Track{% endblocktrans %}:</h3>
             {% comments track %}
