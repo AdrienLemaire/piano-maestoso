@@ -190,6 +190,7 @@ INSTALLED_APPS = [
     "django_markup",
     "tagging_ext",
     "rosetta",
+    #"invitation",
 
     # Pinax
     "pinax.apps.account",
