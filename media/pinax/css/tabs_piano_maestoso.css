@@ -35,6 +35,8 @@ ul.tabs li {
 }
 ul.tabs li a {
     /*padding: 5px 12px;*/
+    display: block;
+    width: 100%;
 }
 ul.tabs {
     /*margin: 0 0 5px;*/
