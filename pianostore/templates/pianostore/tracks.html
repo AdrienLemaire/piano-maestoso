@@ -32,7 +32,7 @@
                     <td class="meta" >
                         <div class="avatar" >{% avatar track.adder 40 %}</div>
                         <div class="details">{% blocktrans %}added by{% endblocktrans %} <a href="{% url profile_detail track.adder.username %}">{{ track.adder }}</a></div>
-                        {% blocktrans %}on{% endblocktrans %} {{ track.added|date }}
+                        {% blocktrans %}on{% endblocktrans %} {{ track.date_added|date }}
                         <a href="/pianostore/user_tracks/{{ track.adder.username }}"><i>{% blocktrans %}View all tracks added by {% endblocktrans %}{{ track.adder }}</i></a>
                     </td>
                     <!-- track info -->

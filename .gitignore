@@ -3,7 +3,6 @@
 *pyc
 *.db
 .venv
-site_media/media/pianostore/*.png
-site_media/media/pianostore/thumb_100_100/*.png
+site_media/media/
 local_settings.py
 logs/cron_mail.log

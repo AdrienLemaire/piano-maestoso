@@ -14,7 +14,7 @@ from forms import TrackForm
 
 def tracks(request):
     """ Return the all tracks list, ordered by added date. """
-    tracks = Track.objects.all().order_by("-added")
+    tracks = Track.objects.all().order_by("-date_added")
     return render_to_response("pianostore/tracks.html", {
         "tracks": tracks,
         "list": 'all',
@@ -24,7 +24,7 @@ def tracks(request):
 def user_tracks(request, username):
     """ Return an user tracks list. """
     user = get_object_or_404(User, username=username)
-    usertracks = Track.objects.filter(adder=user).order_by("-added")
+    usertracks = Track.objects.filter(adder=user).order_by("-date_added")
     return render_to_response("pianostore/tracks.html", {
         "tracks": usertracks,
         "list": 'user',
@@ -47,7 +47,7 @@ def track(request, track_id):
 @login_required
 def your_tracks(request):
     """ Return the logged user tracks list. """
-    yourtracks = Track.objects.filter(adder=request.user).order_by("-added")
+    yourtracks = Track.objects.filter(adder=request.user).order_by("-date_added")
     return render_to_response("pianostore/tracks.html", {
         "tracks": yourtracks,
         "list": 'yours',
@@ -57,25 +57,17 @@ def your_tracks(request):
 @login_required
 def add_track(request):
     """ Add a track to the pianostore. """
-    # POST request
+    track_form = TrackForm()
+
     if request.method == "POST":
-        track_form = TrackForm(request.POST, request.FILES)
+        track_form = TrackForm(request.user, request.POST, request.FILES)
         if track_form.is_valid():
-            # from ipdb import set_trace; set_trace()
             new_track = track_form.save(commit=False)
             new_track.adder = request.user
             new_track.save()
-            request.user.message_set.create(message=_("You have saved track "
-                                  "'%(title)s'") % {'title': new_track.title})
+            request.user.message_set.create(message=_("You have successfully "
+                "uploaded track '%(title)s'") % {'title': new_track.title})
             return HttpResponseRedirect(reverse("pianostore.views.tracks"))
-    # GET request
-    else:
-        track_form = TrackForm()
-        print "track_form data : ", track_form.data
-        return render_to_response("pianostore/add.html", {
-            "track_form": track_form,
-            }, context_instance=RequestContext(request))
-    # generic case
     return render_to_response("pianostore/add.html", {
         "track_form": track_form,
     }, context_instance=RequestContext(request))
@@ -89,7 +81,6 @@ def update_track(request, track_id):
         track_form = TrackForm(request.POST, request.FILES, instance=track)
         track_form.is_update = True
         if request.user == track.adder:
-            #from ipdb import set_trace; set_trace()
             if track_form.is_valid():
                 track_form.save()
                 request.user.message_set.create(message=_("You have updated "
