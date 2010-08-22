@@ -7,4 +7,4 @@ PROJECT_ROOT=$(readlink -f ~/piano-maestoso/)
 # activate virtual environment
 . $WORKON_HOME/piano-maestoso/bin/activate
 
-python manage.py send_mail >> $PROJECT_ROOT/logs/cron_mail.log 2>&1
+python $PROJECT_ROOT/manage.py send_mail >> $PROJECT_ROOT/logs/cron_mail.log 2>&1
