@@ -8,17 +8,40 @@ INSTALLATION:
  - install python 2.6.X
  - install pinax : "pip install Pinax"
  - install requirements : "pip install -r requirements/project.txt"
+ - install django-invitation : "hg clone http://bitbucket.org/david/django-invitation",
+    then from django-invitation/ , do "python setup.py install"
 
 
 
  TREE :
  ~~~~~~
 
+
 .
 |-- apps
 |   |-- about
 |   `-- friends_app
+|-- cron
 |-- deploy
+|-- django-invitation
+|   |-- build
+|   |   |-- bdist.macosx-10.6-x86_64
+|   |   `-- lib
+|   |       |-- examples
+|   |       `-- invitation
+|   |-- dist
+|   |-- django_invitation.egg-info
+|   |-- docs
+|   |-- examples
+|   |   `-- invitation_project
+|   |       `-- templates
+|   `-- invitation
+|       |-- locale
+|       |   `-- de
+|       |-- management
+|       |   `-- commands
+|       `-- templates
+|           `-- invitation
 |-- fixtures
 |-- locale
 |   |-- en
@@ -27,26 +50,32 @@ INSTALLATION:
 |       `-- LC_MESSAGES
 |-- media
 |   |-- css
-|   |-- pianostore
-|   |   `-- uploads
+|   |-- js
 |   `-- pinax
 |       |-- css
-|       |-- img
-|       `-- js
+|       `-- img
 |-- pianostore
 |   |-- locale
 |   |   `-- fr
 |   |       `-- LC_MESSAGES
+|   |-- management
+|   |   `-- commands
 |   |-- media
 |   |   `-- pianostore
-|   |       `-- css
+|   |       |-- css
+|   |       `-- uploads
 |   `-- templates
 |       `-- pianostore
 |-- requirements
 |-- site_media
 |   |-- media
+|   |   |-- photologue
+|   |   |   `-- photos
 |   |   `-- pianostore
-|   |       `-- thumb_100_100
+|   |       |-- mp4
+|   |       |-- ogv
+|   |       |-- uploads
+|   |       `-- webm
 |   `-- static
 |       |-- admin
 |       |   |-- css
@@ -65,6 +94,7 @@ INSTALLATION:
 |       |-- frontendadmin
 |       |   `-- css
 |       |-- images
+|       |-- js
 |       |-- locations
 |       |-- pianostore
 |       |   `-- css
@@ -90,4 +120,4 @@ INSTALLATION:
 |   `-- tags
 `-- tests
 
-74 directories
+101 directories
