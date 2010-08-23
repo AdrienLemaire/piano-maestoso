@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-19 19:10+0000\n"
+"POT-Creation-Date: 2010-08-23 07:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: forms.py:32
-msgid "There is already this track in the library."
+#: forms.py:29
+msgid "There is already a track with the same title in the pianostore."
 msgstr ""
 
-#: models.py:23
+#: models.py:45
+msgid "original track"
+msgstr ""
+
+#: models.py:46
+msgid "track.mp4"
+msgstr ""
+
+#: models.py:47
+msgid "track.webm"
+msgstr ""
+
+#: models.py:48
+msgid "track.ogv"
+msgstr ""
+
+#: models.py:50
 msgid "title"
 msgstr ""
 
-#: models.py:24
-msgid "artist"
+#: models.py:52
+msgid "A \"slug\" is a unique URL-friendly title for an object."
 msgstr ""
 
-#: models.py:25
-msgid "composer"
-msgstr ""
-
-#: models.py:26
-msgid "category"
-msgstr ""
-
-#: models.py:28
+#: models.py:53
 msgid "description"
 msgstr ""
 
-#: models.py:30
+#: models.py:55
+msgid "artist"
+msgstr ""
+
+#: models.py:56
+msgid "composer"
+msgstr ""
+
+#: models.py:57
+msgid "date of composition"
+msgstr ""
+
+#: models.py:59
 msgid "adder"
 msgstr ""
 
-#: models.py:31
+#: models.py:61
+msgid "Public videos will be displayed in the default views."
+msgstr ""
+
+#: models.py:62
 msgid "added"
 msgstr ""
 
-#: views.py:68
-#, python-format
-msgid "You have saved track '%(title)s'"
+#: models.py:64
+msgid "category"
 msgstr ""
 
-#: views.py:95
+#: models.py:65
+msgid "tags"
+msgstr ""
+
+#: models.py:67
+msgid "A cover image to represent this track"
+msgstr ""
+
+#: views.py:72
+#, python-format
+msgid "You have successfully uploaded track '%(title)s'"
+msgstr ""
+
+#: views.py:90
 #, python-format
 msgid "You have updated track '%(title)s'"
 msgstr ""
@@ -81,47 +117,65 @@ msgstr ""
 msgid "Add a track"
 msgstr ""
 
-#: templates/pianostore/track.html:7
+#: templates/pianostore/track.html:8
 msgid "Track Description"
 msgstr ""
 
-#: templates/pianostore/track.html:30 templates/pianostore/tracks.html:50
+#: templates/pianostore/track.html:31
+msgid "Your browser is old."
+msgstr ""
+
+#: templates/pianostore/track.html:31
+msgid "Download this video instead."
+msgstr ""
+
+#: templates/pianostore/track.html:34
+msgid ""
+"<br />The video is currently being converted to web formats, please come "
+"back later"
+msgstr ""
+
+#: templates/pianostore/track.html:46 templates/pianostore/tracks.html:56
 msgid "Update Track"
 msgstr ""
 
-#: templates/pianostore/track.html:37 templates/pianostore/tracks.html:57
+#: templates/pianostore/track.html:53 templates/pianostore/tracks.html:63
 msgid "Delete Track"
 msgstr ""
 
-#: templates/pianostore/track.html:48 templates/pianostore/tracks.html:33
+#: templates/pianostore/track.html:64 templates/pianostore/tracks.html:34
 msgid "added by"
 msgstr ""
 
-#: templates/pianostore/track.html:51 templates/pianostore/tracks.html:34
+#: templates/pianostore/track.html:67 templates/pianostore/tracks.html:35
 msgid "on"
 msgstr ""
 
-#: templates/pianostore/tracks.html:7
+#: templates/pianostore/track.html:69
+msgid "Comments on this Track"
+msgstr ""
+
+#: templates/pianostore/tracks.html:8
 msgid "Piano store"
 msgstr ""
 
-#: templates/pianostore/tracks.html:13
+#: templates/pianostore/tracks.html:14
 msgid "All Tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:16
+#: templates/pianostore/tracks.html:17
 msgid "tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:19
+#: templates/pianostore/tracks.html:20
 msgid "Your Tracks"
 msgstr ""
 
-#: templates/pianostore/tracks.html:35
+#: templates/pianostore/tracks.html:36
 msgid "View all tracks added by "
 msgstr ""
 
-#: templates/pianostore/tracks.html:74
+#: templates/pianostore/tracks.html:86
 msgid "No tracks yet."
 msgstr ""
 

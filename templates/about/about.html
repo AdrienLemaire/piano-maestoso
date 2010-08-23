@@ -3,10 +3,39 @@
 {% block head_title %}{% trans "About" %}{% endblock %}
 {% block body %}
         {% blocktrans %}
-            <h2>About this project</h2>
+            <h2>About Piano Maestoso</h2>
         {% endblocktrans %}
+        <p>
+            {% blocktrans %}
+                This website provides profiles, friends, photos, blogs, tribes, wikis, tweets, bookmarks, swaps, locations and user-to-user messaging.<br />
+                An application "Piano" for sharing music is currently developed.<br />
+                Other applications will be added later, like one for duels proposals, a forum, etc.
+            {% endblocktrans %}
+        </p>
         {% blocktrans %}
-            This project provides profiles, friends, photos, blogs, tribes, wikis, tweets, bookmarks, swaps, locations and user-to-user messaging.<br />
-            It will allows later new applications for sharing music, allowing duels between members, etc. 
+            <h2>Beta version</h2>
         {% endblocktrans %}
+        <p>
+            {% blocktrans %}
+                Please be careful to keep your data in your computer until the v1 release of this website. <br />
+                The database get numerous modifications regularly, and we can't ensure the safety of your data.<br />
+                An intelligent schema and data migrations will also been developed before the v1 release to solve this potential problem.<br/>
+            {% endblocktrans %}
+        </p>
+        {% blocktrans %}
+            <h2>Donation</h2>
+        {% endblocktrans %}
+        <p>
+            {% blocktrans %}
+                This website has already needed tens of hours to get this far, and there is still an enormous amount of work remaining.<br />
+                If you enjoy this website, and have some technical skills for contributing, just mail pianomaestoso.org [at] gmail.com.<br />
+                You can also help by giving small donations to pay the beer and the coffee required for this work :<br />
+                <a href='http://www.pledgie.com/campaigns/12803'><img alt='Click here to lend your support to: piano-maestoso and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/12803.png?skin_name=chrome' border='0' /></a>
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}
+                Thank you very much, and enjoy your time in Piano Maestoso !
+            {% endblocktrans %}
+        </p>
 {% endblock %}

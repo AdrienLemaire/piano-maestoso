@@ -54,6 +54,7 @@ class Track(models.Model):
 
     artist = models.CharField(_('artist'), max_length=255)
     composer = models.CharField(_('composer'), max_length=255)
+    date_composition = models.DateTimeField(_('date of composition'), blank=True)
     adder = models.ForeignKey(User, related_name="added_tracks",
                               verbose_name=_('adder'))
     is_public = models.BooleanField('is public', default=True,
@@ -62,7 +63,8 @@ class Track(models.Model):
 
     category = models.CharField(_('category'), max_length=255)
     tags = TagField(help_text=tagfield_help_text, verbose_name=_('tags'))
-    image = models.ForeignKey(Photo, blank=True, null=True)
+    image = models.ForeignKey(Photo, blank=True, null=True,
+                             help_text=_('A cover image to represent this track'))
 
     def get_absolute_url(self):
         return ("describe_track", [self.pk])

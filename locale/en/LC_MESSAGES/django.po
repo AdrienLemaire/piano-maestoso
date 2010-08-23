@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-19 20:59+0200\n"
+"POT-Creation-Date: 2010-08-23 09:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Adrien LEMAIRE <lemaire.adrien@gmail.com>\n"
 "Language: en\n"
@@ -35,44 +35,80 @@ msgstr ""
 msgid "%(total)s people with email found, %(imported)s contacts imported."
 msgstr ""
 
-#: pianostore/forms.py:32
-msgid "There is already this track in the library."
+#: pianostore/forms.py:29
+msgid "There is already a track with the same title in the pianostore."
 msgstr ""
 
-#: pianostore/models.py:23
+#: pianostore/models.py:45
+msgid "original track"
+msgstr ""
+
+#: pianostore/models.py:46
+msgid "track.mp4"
+msgstr ""
+
+#: pianostore/models.py:47
+msgid "track.webm"
+msgstr ""
+
+#: pianostore/models.py:48
+msgid "track.ogv"
+msgstr ""
+
+#: pianostore/models.py:50
 msgid "title"
 msgstr ""
 
-#: pianostore/models.py:24
-msgid "artist"
+#: pianostore/models.py:52
+msgid "A \"slug\" is a unique URL-friendly title for an object."
 msgstr ""
 
-#: pianostore/models.py:25
-msgid "composer"
-msgstr ""
-
-#: pianostore/models.py:26
-msgid "category"
-msgstr ""
-
-#: pianostore/models.py:28
+#: pianostore/models.py:53
 msgid "description"
 msgstr ""
 
-#: pianostore/models.py:30
+#: pianostore/models.py:55
+msgid "artist"
+msgstr ""
+
+#: pianostore/models.py:56
+msgid "composer"
+msgstr ""
+
+#: pianostore/models.py:57
+msgid "date of composition"
+msgstr ""
+
+#: pianostore/models.py:59
 msgid "adder"
 msgstr ""
 
-#: pianostore/models.py:31
+#: pianostore/models.py:61
+msgid "Public videos will be displayed in the default views."
+msgstr ""
+
+#: pianostore/models.py:62
 msgid "added"
 msgstr ""
 
-#: pianostore/views.py:68
-#, python-format
-msgid "You have saved track '%(title)s'"
+#: pianostore/models.py:64
+msgid "category"
 msgstr ""
 
-#: pianostore/views.py:95
+#: pianostore/models.py:65
+msgid "tags"
+msgstr ""
+
+#: pianostore/models.py:67
+msgid "A cover image to represent this track"
+msgstr ""
+
+#: pianostore/views.py:72
+#, python-format
+msgid "You have successfully uploaded track '%(title)s'"
+msgstr ""
+
+#: pianostore/views.py:90
 #, python-format
 msgid "You have updated track '%(title)s'"
 msgstr ""
@@ -99,51 +135,69 @@ msgstr ""
 msgid "Add a track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:7
+#: pianostore/templates/pianostore/track.html:8
 msgid "Track Description"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:30
-#: pianostore/templates/pianostore/tracks.html:50
+#: pianostore/templates/pianostore/track.html:31
+msgid "Your browser is old."
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:31
+msgid "Download this video instead."
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:34
+msgid ""
+"<br />The video is currently being converted to web formats, please come "
+"back later"
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:46
+#: pianostore/templates/pianostore/tracks.html:56
 msgid "Update Track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:37
-#: pianostore/templates/pianostore/tracks.html:57
+#: pianostore/templates/pianostore/track.html:53
+#: pianostore/templates/pianostore/tracks.html:63
 msgid "Delete Track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:48
-#: pianostore/templates/pianostore/tracks.html:33
+#: pianostore/templates/pianostore/track.html:64
+#: pianostore/templates/pianostore/tracks.html:34
 msgid "added by"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:51
-#: pianostore/templates/pianostore/tracks.html:34
+#: pianostore/templates/pianostore/track.html:67
+#: pianostore/templates/pianostore/tracks.html:35
 msgid "on"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:7
+#: pianostore/templates/pianostore/track.html:69
+msgid "Comments on this Track"
+msgstr ""
+
+#: pianostore/templates/pianostore/tracks.html:8
 msgid "Piano store"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:13
+#: pianostore/templates/pianostore/tracks.html:14
 msgid "All Tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:16
+#: pianostore/templates/pianostore/tracks.html:17
 msgid "tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:19
+#: pianostore/templates/pianostore/tracks.html:20
 msgid "Your Tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:35
+#: pianostore/templates/pianostore/tracks.html:36
 msgid "View all tracks added by "
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:74
+#: pianostore/templates/pianostore/tracks.html:86
 msgid "No tracks yet."
 msgstr ""
 
@@ -155,11 +209,11 @@ msgstr ""
 msgid "update track"
 msgstr ""
 
-#: templates/base.html:52
+#: templates/base.html:49
 msgid "Hide announcement"
 msgstr ""
 
-#: templates/base.html:74
+#: templates/base.html:70
 msgid "clear"
 msgstr ""
 
@@ -285,19 +339,71 @@ msgstr ""
 #: templates/about/about.html:5
 msgid ""
 "\n"
-"            <h2>About this project</h2>\n"
+"            <h2>About Piano Maestoso</h2>\n"
 "        "
 msgstr ""
 
-#: templates/about/about.html:8
+#: templates/about/about.html:9
 msgid ""
 "\n"
-"            This project provides profiles, friends, photos, blogs, tribes, "
-"wikis, tweets, bookmarks, swaps, locations and user-to-user messaging.<br /"
-">\n"
-"            It will allows later new applications for sharing music, "
-"allowing duels between members, etc. \n"
+"                This website provides profiles, friends, photos, blogs, "
+"tribes, wikis, tweets, bookmarks, swaps, locations and user-to-user "
+"messaging.<br />\n"
+"                An application \"Piano\" for sharing music is currently "
+"developed.<br />\n"
+"                Other applications will be added later, like one for duels "
+"proposals, a forum, etc.\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:15
+msgid ""
+"\n"
+"            <h2>Beta version</h2>\n"
 "        "
+msgstr ""
+
+#: templates/about/about.html:19
+msgid ""
+"\n"
+"                Please be careful to keep your data in your computer until "
+"the v1 release of this website. <br />\n"
+"                The database get numerous modifications regularly, and we "
+"can't ensure the safety of your data.<br />\n"
+"                An intelligent schema and data migrations will also been "
+"developed before the v1 release to solve this potential problem.<br/>\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:25
+msgid ""
+"\n"
+"            <h2>Donation</h2>\n"
+"        "
+msgstr ""
+
+#: templates/about/about.html:29
+msgid ""
+"\n"
+"                This website has already needed tens of hours to get this "
+"far, and there is still an enormous amount of work remaining.<br />\n"
+"                If you enjoy this website, and have some technical skills "
+"for contributing, just mail pianomaestoso.org [at] gmail.com.<br />\n"
+"                You can also help by giving small donations to pay the beer "
+"and the coffee required for this work :<br />\n"
+"                <a href='http://www.pledgie.com/campaigns/12803'><img "
+"alt='Click here to lend your support to: piano-maestoso and make a donation "
+"at www.pledgie.com !' src='http://www.pledgie.com/campaigns/12803.png?"
+"skin_name=chrome' border='0' /></a>\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:37
+msgid ""
+"\n"
+"                Thank you very much, and enjoy your time in Piano "
+"Maestoso !\n"
+"            "
 msgstr ""
 
 #: templates/about/what_next.html:6 templates/about/what_next.html.py:9
@@ -314,6 +420,19 @@ msgstr ""
 #: templates/about/what_next.html:48
 #, python-format
 msgid "Start by <a href=\"%(login_url)s\">logging in</a>."
+msgstr ""
+
+#: templates/account/language_change.html:6
+#: templates/account/language_change.html:9
+msgid "Language"
+msgstr ""
+
+#: templates/account/language_change.html:11
+msgid "Piano Maestoso can be used in your preferred language."
+msgstr ""
+
+#: templates/account/language_change.html:18
+msgid "Change my language"
 msgstr ""
 
 #: templates/account/other_services.html:5
@@ -335,6 +454,67 @@ msgstr ""
 
 #: templates/account/other_services.html:25
 msgid "save"
+msgstr ""
+
+#: templates/account/timezone_change.html:6
+#: templates/account/timezone_change.html:9
+msgid "Timezone"
+msgstr ""
+
+#: templates/account/timezone_change.html:11
+msgid ""
+"Piano Maestoso can localize all times into your preferred timezone. Change "
+"your timezone below."
+msgstr ""
+
+#: templates/account/timezone_change.html:18
+msgid "Change my timezone"
+msgstr ""
+
+#: templates/admin/base_site.html:7
+msgid "Piano Maestoso administration"
+msgstr ""
+
+#: templates/admin/index.html:18
+msgid "System Translations"
+msgstr ""
+
+#: templates/admin/index.html:31
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: templates/admin/index.html:32
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: templates/admin/index.html:42
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:48
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:58
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:66
+msgid "Recent Actions"
+msgstr ""
+
+#: templates/admin/index.html:67
+msgid "My Actions"
+msgstr ""
+
+#: templates/admin/index.html:71
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:85
+msgid "Unknown content"
 msgstr ""
 
 #: templates/friends_app/contacts.html:7
@@ -405,8 +585,8 @@ msgstr ""
 
 #: templates/friends_app/invite.html:11
 msgid ""
-"If you'd like to invite someone to join Pinax, you can enter their email "
-"address and a message for them below:"
+"If you'd like to invite someone to join Piano Maestoso, you can enter their "
+"email address and a message for them below:"
 msgstr ""
 
 #: templates/friends_app/invite_form.html:11
