@@ -2,18 +2,18 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the Piano Maestoso package.
 # Adrien LEMAIRE <lemaire.adrien@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-19 20:59+0200\n"
+"POT-Creation-Date: 2010-08-23 09:55+0200\n"
 "PO-Revision-Date: 2010-08-19 21:10\n"
 "Last-Translator: <lemaire.adrien@gmail.com>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
 "X-Translated-Using: django-rosetta 0.5.6\n"
 
 #: apps/friends_app/views.py:33
@@ -36,44 +36,81 @@ msgstr ""
 msgid "%(total)s people with email found, %(imported)s contacts imported."
 msgstr ""
 
-#: pianostore/forms.py:32
-msgid "There is already this track in the library."
+#: pianostore/forms.py:29
+msgid "There is already a track with the same title in the pianostore."
 msgstr ""
 
-#: pianostore/models.py:23
+#: pianostore/models.py:45
+#, fuzzy
+msgid "original track"
+msgstr "Vos Enregistrements"
+
+#: pianostore/models.py:46
+msgid "track.mp4"
+msgstr ""
+
+#: pianostore/models.py:47
+msgid "track.webm"
+msgstr ""
+
+#: pianostore/models.py:48
+msgid "track.ogv"
+msgstr ""
+
+#: pianostore/models.py:50
 msgid "title"
 msgstr ""
 
-#: pianostore/models.py:24
-msgid "artist"
+#: pianostore/models.py:52
+msgid "A \"slug\" is a unique URL-friendly title for an object."
 msgstr ""
 
-#: pianostore/models.py:25
-msgid "composer"
-msgstr ""
-
-#: pianostore/models.py:26
-msgid "category"
-msgstr ""
-
-#: pianostore/models.py:28
+#: pianostore/models.py:53
 msgid "description"
 msgstr ""
 
-#: pianostore/models.py:30
+#: pianostore/models.py:55
+msgid "artist"
+msgstr ""
+
+#: pianostore/models.py:56
+msgid "composer"
+msgstr ""
+
+#: pianostore/models.py:57
+msgid "date of composition"
+msgstr ""
+
+#: pianostore/models.py:59
 msgid "adder"
 msgstr ""
 
-#: pianostore/models.py:31
+#: pianostore/models.py:61
+msgid "Public videos will be displayed in the default views."
+msgstr ""
+
+#: pianostore/models.py:62
 msgid "added"
 msgstr ""
 
-#: pianostore/views.py:68
-#, python-format
-msgid "You have saved track '%(title)s'"
+#: pianostore/models.py:64
+msgid "category"
 msgstr ""
 
-#: pianostore/views.py:95
+#: pianostore/models.py:65
+msgid "tags"
+msgstr ""
+
+#: pianostore/models.py:67
+msgid "A cover image to represent this track"
+msgstr ""
+
+#: pianostore/views.py:72
+#, python-format
+msgid "You have successfully uploaded track '%(title)s'"
+msgstr ""
+
+#: pianostore/views.py:90
 #, python-format
 msgid "You have updated track '%(title)s'"
 msgstr ""
@@ -100,51 +137,69 @@ msgstr "Vos Enregistrements"
 msgid "Add a track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:7
+#: pianostore/templates/pianostore/track.html:8
 msgid "Track Description"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:30
-#: pianostore/templates/pianostore/tracks.html:50
+#: pianostore/templates/pianostore/track.html:31
+msgid "Your browser is old."
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:31
+msgid "Download this video instead."
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:34
+msgid ""
+"<br />The video is currently being converted to web formats, please come "
+"back later"
+msgstr ""
+
+#: pianostore/templates/pianostore/track.html:46
+#: pianostore/templates/pianostore/tracks.html:56
 msgid "Update Track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:37
-#: pianostore/templates/pianostore/tracks.html:57
+#: pianostore/templates/pianostore/track.html:53
+#: pianostore/templates/pianostore/tracks.html:63
 msgid "Delete Track"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:48
-#: pianostore/templates/pianostore/tracks.html:33
+#: pianostore/templates/pianostore/track.html:64
+#: pianostore/templates/pianostore/tracks.html:34
 msgid "added by"
 msgstr ""
 
-#: pianostore/templates/pianostore/track.html:51
-#: pianostore/templates/pianostore/tracks.html:34
+#: pianostore/templates/pianostore/track.html:67
+#: pianostore/templates/pianostore/tracks.html:35
 msgid "on"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:7
+#: pianostore/templates/pianostore/track.html:69
+msgid "Comments on this Track"
+msgstr ""
+
+#: pianostore/templates/pianostore/tracks.html:8
 msgid "Piano store"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:13
+#: pianostore/templates/pianostore/tracks.html:14
 msgid "All Tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:16
+#: pianostore/templates/pianostore/tracks.html:17
 msgid "tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:19
+#: pianostore/templates/pianostore/tracks.html:20
 msgid "Your Tracks"
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:35
+#: pianostore/templates/pianostore/tracks.html:36
 msgid "View all tracks added by "
 msgstr ""
 
-#: pianostore/templates/pianostore/tracks.html:74
+#: pianostore/templates/pianostore/tracks.html:86
 msgid "No tracks yet."
 msgstr ""
 
@@ -156,11 +211,11 @@ msgstr ""
 msgid "update track"
 msgstr ""
 
-#: templates/base.html:52
+#: templates/base.html:49
 msgid "Hide announcement"
 msgstr ""
 
-#: templates/base.html:74
+#: templates/base.html:70
 msgid "clear"
 msgstr ""
 
@@ -175,8 +230,10 @@ msgstr "Bienvenue sur Piano Maestoso"
 #: templates/homepage.html:14
 msgid ""
 "\n"
-"        <b>Piano Maestoso</b> is a Community Site for friends who share the same\n"
-"        passion : The music. This website works with invitations as we want that\n"
+"        <b>Piano Maestoso</b> is a Community Site for friends who share the "
+"same\n"
+"        passion : The music. This website works with invitations as we want "
+"that\n"
 "        everybody could know each other.\n"
 "        "
 msgstr ""
@@ -197,7 +254,8 @@ msgstr ""
 #: templates/homepage.html:31
 msgid ""
 "\n"
-"        It will allows later new applications for sharing music, allowing duels\n"
+"        It will allows later new applications for sharing music, allowing "
+"duels\n"
 "        between members, etc.\n"
 "        "
 msgstr ""
@@ -205,17 +263,24 @@ msgstr ""
 #: templates/homepage.html:40
 #, python-format
 msgid "Wondering <a href=\"%(what_next_url)s\">What Next</a>?"
-msgstr "Vous demandez-vous <a href=\"%(what_next_url)s\">Que faire maintenant</a>?"
+msgstr ""
+"Vous demandez-vous <a href=\"%(what_next_url)s\">Que faire maintenant</a>?"
 
 #: templates/homepage.html:45
 #, python-format
-msgid "You can <a href=\"%(signup_url)s\">Sign up</a> and <a href=\"%(login_url)s\">Log in</a> to try out the site."
-msgstr "Vous pouvez <a href=\"%(signup_url)s\">vous inscrire</a> et <a href=\"%(login_url)s\">vous authentifier</a> pour essayer le site."
+msgid ""
+"You can <a href=\"%(signup_url)s\">Sign up</a> and <a href=\"%(login_url)s"
+"\">Log in</a> to try out the site."
+msgstr ""
+"Vous pouvez <a href=\"%(signup_url)s\">vous inscrire</a> et <a href="
+"\"%(login_url)s\">vous authentifier</a> pour essayer le site."
 
 #: templates/homepage.html:47
 #, python-format
 msgid "You can <a href=\"%(login_url)s\">Log in</a> to try out the site."
-msgstr "Vous pouvez <a href=\"%(login_url)s\">vous authentifier</a> pour essayer le site."
+msgstr ""
+"Vous pouvez <a href=\"%(login_url)s\">vous authentifier</a> pour essayer le "
+"site."
 
 #: templates/site_base.html:46
 msgid "Profile"
@@ -281,16 +346,71 @@ msgstr ""
 #: templates/about/about.html:5
 msgid ""
 "\n"
-"            <h2>About this project</h2>\n"
+"            <h2>About Piano Maestoso</h2>\n"
 "        "
 msgstr ""
 
-#: templates/about/about.html:8
+#: templates/about/about.html:9
 msgid ""
 "\n"
-"            This project provides profiles, friends, photos, blogs, tribes, wikis, tweets, bookmarks, swaps, locations and user-to-user messaging.<br />\n"
-"            It will allows later new applications for sharing music, allowing duels between members, etc. \n"
+"                This website provides profiles, friends, photos, blogs, "
+"tribes, wikis, tweets, bookmarks, swaps, locations and user-to-user "
+"messaging.<br />\n"
+"                An application \"Piano\" for sharing music is currently "
+"developed.<br />\n"
+"                Other applications will be added later, like one for duels "
+"proposals, a forum, etc.\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:15
+msgid ""
+"\n"
+"            <h2>Beta version</h2>\n"
 "        "
+msgstr ""
+
+#: templates/about/about.html:19
+msgid ""
+"\n"
+"                Please be careful to keep your data in your computer until "
+"the v1 release of this website. <br />\n"
+"                The database get numerous modifications regularly, and we "
+"can't ensure the safety of your data.<br />\n"
+"                An intelligent schema and data migrations will also been "
+"developed before the v1 release to solve this potential problem.<br/>\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:25
+msgid ""
+"\n"
+"            <h2>Donation</h2>\n"
+"        "
+msgstr ""
+
+#: templates/about/about.html:29
+msgid ""
+"\n"
+"                This website has already needed tens of hours to get this "
+"far, and there is still an enormous amount of work remaining.<br />\n"
+"                If you enjoy this website, and have some technical skills "
+"for contributing, just mail pianomaestoso.org [at] gmail.com.<br />\n"
+"                You can also help by giving small donations to pay the beer "
+"and the coffee required for this work :<br />\n"
+"                <a href='http://www.pledgie.com/campaigns/12803'><img "
+"alt='Click here to lend your support to: piano-maestoso and make a donation "
+"at www.pledgie.com !' src='http://www.pledgie.com/campaigns/12803.png?"
+"skin_name=chrome' border='0' /></a>\n"
+"            "
+msgstr ""
+
+#: templates/about/about.html:37
+msgid ""
+"\n"
+"                Thank you very much, and enjoy your time in Piano "
+"Maestoso !\n"
+"            "
 msgstr ""
 
 #: templates/about/what_next.html:6 templates/about/what_next.html.py:9
@@ -299,13 +419,30 @@ msgstr "Que faire maintenant?"
 
 #: templates/about/what_next.html:46
 #, python-format
-msgid "Start by <a href=\"%(signup_url)s\">signing up</a> and <a href=\"%(login_url)s\">logging in</a>."
-msgstr "Commencez par <a href=\"%(signup_url)s\">vous inscrire</a> et <a href=\"%(login_url)s\">vous authentifier</a>."
+msgid ""
+"Start by <a href=\"%(signup_url)s\">signing up</a> and <a href="
+"\"%(login_url)s\">logging in</a>."
+msgstr ""
+"Commencez par <a href=\"%(signup_url)s\">vous inscrire</a> et <a href="
+"\"%(login_url)s\">vous authentifier</a>."
 
 #: templates/about/what_next.html:48
 #, python-format
 msgid "Start by <a href=\"%(login_url)s\">logging in</a>."
 msgstr "Commencez par <a href=\"%(login_url)s\">vous authentifier</a>."
+
+#: templates/account/language_change.html:6
+#: templates/account/language_change.html:9
+msgid "Language"
+msgstr "Langage"
+
+#: templates/account/language_change.html:11
+msgid "Piano Maestoso can be used in your preferred language."
+msgstr ""
+
+#: templates/account/language_change.html:18
+msgid "Change my language"
+msgstr ""
 
 #: templates/account/other_services.html:5
 #: templates/account/other_services.html:9
@@ -327,6 +464,69 @@ msgstr "Changez votre compte avec ce formulaire"
 #: templates/account/other_services.html:25
 msgid "save"
 msgstr "sauvegarder"
+
+#: templates/account/timezone_change.html:6
+#: templates/account/timezone_change.html:9
+msgid "Timezone"
+msgstr "Fuseau horairre"
+
+#: templates/account/timezone_change.html:11
+msgid ""
+"Piano Maestoso can localize all times into your preferred timezone. Change "
+"your timezone below."
+msgstr ""
+
+#: templates/account/timezone_change.html:18
+msgid "Change my timezone"
+msgstr ""
+
+#: templates/admin/base_site.html:7
+msgid "Piano Maestoso administration"
+msgstr ""
+
+#: templates/admin/index.html:18
+msgid "System Translations"
+msgstr ""
+
+#: templates/admin/index.html:31
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: templates/admin/index.html:32
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: templates/admin/index.html:42
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:48
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:58
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:66
+#, fuzzy
+msgid "Recent Actions"
+msgstr "Associations OpenID"
+
+#: templates/admin/index.html:67
+#, fuzzy
+msgid "My Actions"
+msgstr "Locations"
+
+#: templates/admin/index.html:71
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:85
+msgid "Unknown content"
+msgstr ""
 
 #: templates/friends_app/contacts.html:7
 #: templates/friends_app/contacts.html:10
@@ -395,8 +595,13 @@ msgid "No join requests sent."
 msgstr "Pas de demande d'inscriptio envoyée."
 
 #: templates/friends_app/invite.html:11
-msgid "If you'd like to invite someone to join Pinax, you can enter their email address and a message for them below:"
-msgstr "Si vous voulez inviter quelqu'un à rejoindre notre site, vous pouvez saisir leurs adresses email et rédiger un message pour eux ci-dessous:"
+#, fuzzy
+msgid ""
+"If you'd like to invite someone to join Piano Maestoso, you can enter their "
+"email address and a message for them below:"
+msgstr ""
+"Si vous voulez inviter quelqu'un à rejoindre notre site, vous pouvez saisir "
+"leurs adresses email et rédiger un message pour eux ci-dessous:"
 
 #: templates/friends_app/invite_form.html:11
 msgid "Someone with this email address has already joined:"
@@ -514,7 +719,8 @@ msgstr ""
 
 #: templates/profiles/profile.html:182
 #, python-format
-msgid "You haven't added any <a href=\"%(add_bookmark_url)s\">bookmarks</a> yet."
+msgid ""
+"You haven't added any <a href=\"%(add_bookmark_url)s\">bookmarks</a> yet."
 msgstr ""
 
 #: templates/profiles/profile.html:186
@@ -531,8 +737,12 @@ msgstr ""
 
 #: templates/profiles/profile.html:225
 #, python-format
-msgid "<a href=\"%(signup_url)s\">Sign up</a> and <a href=\"%(login_url)s\">log in </a> to add this person as a friend and see their tweets and blog posts."
-msgstr "Vous pouvez <a href=\"%(signup_url)s\">vous inscrire</a> et <a href=\"%(login_url)s\">vous authentifier</a> pour essayer le site."
+msgid ""
+"<a href=\"%(signup_url)s\">Sign up</a> and <a href=\"%(login_url)s\">log in "
+"</a> to add this person as a friend and see their tweets and blog posts."
+msgstr ""
+"Vous pouvez <a href=\"%(signup_url)s\">vous inscrire</a> et <a href="
+"\"%(login_url)s\">vous authentifier</a> pour essayer le site."
 
 #: templates/tags/index.html:16
 msgid "Tags"
@@ -592,9 +802,6 @@ msgstr "Tout les articles wiki correspondant à <i>%(tag)s</i>"
 #~ msgid "E-Mail Addresses"
 #~ msgstr "Adresses email"
 
-#~ msgid "OpenID Associations"
-#~ msgstr "Associations OpenID"
-
 #~ msgid "Change Password"
 #~ msgstr "Changer de mot de passe"
 
@@ -603,12 +810,6 @@ msgstr "Tout les articles wiki correspondant à <i>%(tag)s</i>"
 
 #~ msgid "Delete Password"
 #~ msgstr "Effacer le mot de passe"
-
-#~ msgid "Language"
-#~ msgstr "Langage"
-
-#~ msgid "Timezone"
-#~ msgstr "Fuseau horairre"
 
 #~ msgid "Avatar"
 #~ msgstr "Avatar"

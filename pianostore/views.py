@@ -1,3 +1,6 @@
+# from python
+#from time import sleep
+
 #from django
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -15,6 +18,7 @@ from forms import TrackForm
 def tracks(request):
     """ Return the all tracks list, ordered by added date. """
     tracks = Track.objects.all().order_by("-date_added")
+    #sleep(10**10);
     return render_to_response("pianostore/tracks.html", {
         "tracks": tracks,
         "list": 'all',
