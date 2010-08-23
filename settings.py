@@ -107,6 +107,7 @@ MIDDLEWARE_CLASSES = [
     "django_sorting.middleware.SortingMiddleware",
     "pinax.middleware.security.HideSensistiveFieldsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    #"django.middleware.gzip.GZipMiddleware",
 ]
 
 ROOT_URLCONF = "piano-maestoso.urls"
