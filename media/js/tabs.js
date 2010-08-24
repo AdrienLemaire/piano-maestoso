@@ -11,3 +11,9 @@
         //});
     //}
 //});
+$("#tab_inbox").enableTransforms();
+$("#tab_inbox").updateTransform('rotate', 0);
+$("#tab_inbox").animate({
+    rotate: 45,
+    "margin-top": "+=50px"
+}, 0);
