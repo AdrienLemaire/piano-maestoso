@@ -61,11 +61,11 @@ h1 {
 }
 #body_block {
     position: absolute;
-    right:170px;
+    right:180px;
     min-width: 625px;
     left:0;
     background-color: #fff;
-    -moz-border-radius-bottomright: 25% 25%;
+    -moz-border-radius-bottomright: 170px;
     padding-top:120px;
     padding-bottom: 5em;
 }
@@ -75,11 +75,11 @@ h1 {
     bottom:0;
     width:100%;
     height:100%;
-    padding-bottom:160px;
-    padding-right:160px;
+    padding-bottom:170px;
+    padding-right:170px;
     background-color:black;
     z-index:-1;
-    -moz-border-radius-bottomright: 25% 25%;
+    -moz-border-radius-bottomright: 340px;
 }
 
 #footer {
