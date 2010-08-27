@@ -61,7 +61,7 @@ h1 {
     height:100%;
     padding-bottom:170px;
     padding-right:170px;
-    background-color:black;
+    background: -moz-radial-gradient(#666 75%, #000 85%);
     z-index:-1;
     -moz-border-radius-bottomright: 340px;
 }
