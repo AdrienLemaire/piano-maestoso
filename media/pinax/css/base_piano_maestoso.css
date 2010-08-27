@@ -39,24 +39,8 @@ h1 {
 #container {
     position:relative;
     min-width:850px;
-    /*min-height:100%;*/
-    /*width: 95%;*/
-    /*height: auto !important;*/
-    /*height:100%;*/
-    /*background-color:purple;*/
-    /*-moz-border-radius-bottomright: 30% 30%;*/
 }
-/*#container>:last-child {*/
-    /*position:absolute;*/
-    /*[>bottom:0;<]*/
-    /*height:15%;*/
-    /*background-color:blue;*/
-/*}*/
 #body {
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*width:100%;*/
-    /*background-color:green;*/
     padding-bottom: 20%;
 }
 #body_block {
@@ -85,9 +69,6 @@ h1 {
 #footer {
     color: #999; /* footer text colour */
     clear: both;
-    /*bottom:0;*/
-    /*position:absolute;*/
-    /*min-height:200px;*/
 }
 #footer>.legal {
     padding-top:100px;
@@ -233,7 +214,7 @@ ul.errorlist {
 /* MESSAGES */
 
 ul#messages {
-    margin: 0 0 10px 0;
+    margin: 0 180px 10px 0;
     padding: 0;
     list-style: none;
 }

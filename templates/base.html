@@ -57,6 +57,17 @@
 
             <div id="tabhead">
                 <div class="logo" dir="ltr">{% block logo_link_image %}{% endblock %}</div>
+                {% if messages %}
+                    <ul id="messages">
+                        {% for message in messages %}
+                        <li id="message_{{ forloop.counter }}"{% if message.tags %} 
+                         class="{{ message.tags }}"{% endif %}>
+                            <a href="#"><small>{% trans "clear" %}</small></a>
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 <div id="left_tabs" >{% block left_tabs %}{% endblock %}</div>
                 <div id="subnav" class="clearfix">
                     {% block subnav_base %}
@@ -77,17 +88,6 @@
                         </div>
                         {% block right_tabs %}{% endblock %}
                     </div>
-                    {% if messages %}
-                        <ul id="messages">
-                            {% for message in messages %}
-                            <li id="message_{{ forloop.counter }}"{% if message.tags %} 
-                             class="{{ message.tags }}"{% endif %}>
-                                <a href="#"><small>{% trans "clear" %}</small></a>
-                                {{ message }}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
                     <div id="body_block">
                         {% block body %}
                         {% endblock %}
