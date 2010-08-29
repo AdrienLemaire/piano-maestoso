@@ -13,7 +13,7 @@ body {
     font-size: 10pt;
 }
 a, a:visited {
-    color: #13C;
+    color: #444;
 }
 img {
     border: 0;
@@ -61,7 +61,7 @@ h1 {
     height:100%;
     padding-bottom:170px;
     padding-right:170px;
-    background: -moz-radial-gradient(#666 75%, #000 85%);
+    background: -moz-radial-gradient(#666 50%, #000 80%);
     z-index:-1;
     -moz-border-radius-bottomright: 340px;
 }
@@ -224,7 +224,7 @@ ul#messages li {
 }
 ul#messages li a {
     float: right;
-    color: #693;
+    color: #111;
 }
 ul#messages .debug {
     background: #EEE;
@@ -235,8 +235,8 @@ ul#messages .info {
     border: 1px solid #9BC;
 }
 ul#messages .success {
-    background: #EFD;
-    border: 1px solid #BC9;
+    background: #ddd;
+    border: 1px solid #444;
 }
 ul#messages .warning {
     background: #FED;
