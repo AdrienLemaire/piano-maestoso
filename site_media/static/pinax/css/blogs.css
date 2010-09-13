@@ -1,16 +1,21 @@
 /* BLOGS */
 
+.blog-post  {
+    height: auto !important;
+}
+
 .blog-post h2 {
     margin: 10px 0 0 0;
     font-style: italic;
 }
 .blog-post-tease {
-    width: 500px;
-    float: left;
+    /*float: left;*/
+    min-width: 500px;
+    width: 60%;
 }
 .blog-post-meta {
-    width: 200px;
-    float: left;
+    float: right;
+    min-width: 200px;
     margin-left: 30px;
 }
 .blog-post-meta img {
