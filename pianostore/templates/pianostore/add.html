@@ -13,6 +13,7 @@
         <fieldset class="inlineLabels">
             {{ track_form|as_uni_form }}
             <div class="form_block">
+                <input type="hidden" name="upload_ok" value="value">
                 <input type="submit" value="{% trans 'add track' %}">
             </div>
         </fieldset>
