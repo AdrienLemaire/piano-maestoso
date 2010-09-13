@@ -18,7 +18,6 @@ from forms import TrackForm
 def tracks(request):
     """ Return the all tracks list, ordered by added date. """
     tracks = Track.objects.all().order_by("-date_added")
-    #sleep(10**10);
     return render_to_response("pianostore/tracks.html", {
         "tracks": tracks,
         "list": 'all',
@@ -51,7 +50,8 @@ def track(request, track_id):
 @login_required
 def your_tracks(request):
     """ Return the logged user tracks list. """
-    yourtracks = Track.objects.filter(adder=request.user).order_by("-date_added")
+    yourtracks = Track.objects.filter(adder=request.user)\
+        .order_by("-date_added")
     return render_to_response("pianostore/tracks.html", {
         "tracks": yourtracks,
         "list": 'yours',
@@ -82,7 +82,8 @@ def update_track(request, track_id):
     """ Update a track given its id. """
     track = Track.objects.get(id=track_id)
     if request.method == "POST":
-        track_form = TrackForm(request.user, request.POST, request.FILES, instance=track)
+        track_form = TrackForm(request.user, request.POST, request.FILES,
+                               instance=track)
         track_form.is_update = True
         if request.user == track.adder:
             if track_form.is_valid():
@@ -104,6 +105,6 @@ def delete_track(request, track_id):
     track = get_object_or_404(Track, id=track_id)
     if request.user == track.adder:
         track.delete()
-        request.user.message_set.create(message="Track Deleted")
+        request.user.message_set.create(message=_("Track Deleted"))
 
     return HttpResponseRedirect(reverse("pianostore.views.tracks"))

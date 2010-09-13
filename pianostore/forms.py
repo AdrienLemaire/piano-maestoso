@@ -13,7 +13,8 @@ class TrackForm(forms.ModelForm):
         model = Track
         #fields = ('coverart', 'composer', 'artist', 'category',
                   #'description', 'title')
-        exclude = ('adder', 'track_mp4', 'track_webm', 'track_ogv', 'date_added')
+        exclude = ('adder', 'track_mp4', 'track_webm', 'track_ogv',
+                   'date_added')
 
     def __init__(self, user=None, *args, **kwargs):
         super(TrackForm, self).__init__(*args, **kwargs)
@@ -24,10 +25,8 @@ class TrackForm(forms.ModelForm):
         """ Do validation stuff. """
         # if a track with that title already exists...
         if not self.is_update:
-            if Track.objects.filter(title=self.cleaned_data['title']).\
-                                                            count() > 0:
+            if Track.objects.filter(title=self.cleaned_data['title'])\
+                    .count() > 0:
                 raise forms.ValidationError(_("There is already a track "
                                 "with the same title in the pianostore."))
         return self.cleaned_data
-
-

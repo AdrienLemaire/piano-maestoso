@@ -23,7 +23,7 @@ try:
     """ attempt to load the django-tagging TagField from default location,
     otherwise we substitude a dummy TagField. """
     from tagging.fields import TagField
-    tagfield_help_text = 'Separate tags with spaces, put quotes around multiple-word tags.'
+    tagfield_help_text = _('Separate tags with spaces, put quotes around multiple-word tags.')
 except ImportError:
     class TagField(models.CharField):
         def __init__(self, **kwargs):
@@ -32,7 +32,7 @@ except ImportError:
             super(TagField, self).__init__(**default_kwargs)
         def get_internal_type(self):
             return 'CharField'
-    tagfield_help_text = 'Django-tagging was not found, tags will be treated as plain text.'
+    tagfield_help_text = _('Django-tagging was not found, tags will be treated as plain text.')
 
 
 
@@ -42,29 +42,38 @@ except ImportError:
 
 class Track(models.Model):
     """Track Model"""
+
+    # Videos / Images
     original_track = models.FileField(_('original track'), upload_to='pianostore/uploads/')
     track_mp4 = models.FileField(_('track.mp4'), upload_to='pianostore/mp4/')
     track_webm = models.FileField(_('track.webm'), upload_to='pianostore/webm/')
     track_ogv = models.FileField(_('track.ogv'), upload_to='pianostore/ogv/')
+    image = models.ForeignKey(Photo, blank=True, null=True,
+                             help_text=_('A cover image to represent this track'))
 
+    # Texts
     title = models.CharField(_('title'), max_length=255)
     title_slug = models.SlugField('slug', unique=True,
         help_text=_('A "slug" is a unique URL-friendly title for an object.'))
     description = models.TextField(_('description'), blank=True)
 
+    # Names
     artist = models.CharField(_('artist'), max_length=255)
     composer = models.CharField(_('composer'), max_length=255)
-    date_composition = models.DateTimeField(_('date of composition'), blank=True)
     adder = models.ForeignKey(User, related_name="added_tracks",
                               verbose_name=_('adder'))
+
+    # Dates
+    date_composition = models.DateTimeField(_('date of composition'), blank=True)
+    date_added = models.DateTimeField(_('added'), default=datetime.datetime.now)
+    #date_updated = models.DateTimeField(_('added'), default=datetime.datetime.now)
+
+    # Other
     is_public = models.BooleanField('is public', default=True,
         help_text=_('Public videos will be displayed in the default views.'))
-    date_added = models.DateTimeField(_('added'), default=datetime.datetime.now)
-
     category = models.CharField(_('category'), max_length=255)
     tags = TagField(help_text=tagfield_help_text, verbose_name=_('tags'))
-    image = models.ForeignKey(Photo, blank=True, null=True,
-                             help_text=_('A cover image to represent this track'))
+    #stars = models.IntegerField(_('stars'))
 
     def get_absolute_url(self):
         return ("describe_track", [self.pk])
