@@ -1,64 +1,15 @@
 /* SITE-SPECIFIC TAB STYLING */
 
-body.profile #tab_profile.black a,
-body.blogs #tab_blogs.black a,
-body.swaps #tab_swaps.black a,
-body.photos #tab_photos.black a,
-body.tribes #tab_tribes.black a,
-body.tweets #tab_tweets.black a,
-body.bookmarks #tab_bookmarks.black a,
-body.locations #tab_locations.black a,
-body.inbox #tab_inbox.black a,
-body.pianostore #tab_pianostore.black a
+body.profile #tab_profile,
+body.blogs #tab_blogs,
+body.swaps #tab_swaps,
+body.photos #tab_photos,
+body.tribes #tab_tribes,
+body.tweets #tab_tweets,
+body.bookmarks #tab_bookmarks,
+body.locations #tab_locations,
+body.inbox #tab_inbox,
+body.pianostore #tab_pianostore
 {
-    color: #ccc; /* selected tab text colour */
-}
-body.profile #tab_profile.white a,
-body.blogs #tab_blogs.white a,
-body.swaps #tab_swaps.white a,
-body.photos #tab_photos.white a,
-body.tribes #tab_tribes.white a,
-body.tweets #tab_tweets.white a,
-body.bookmarks #tab_bookmarks.white a,
-body.locations #tab_locations.white a,
-body.inbox #tab_inbox.white a,
-body.pianostore #tab_pianostore.white a
-{
-    color: #333; /* selected tab text colour */
-}
-body.profile #tab_profile.black,
-body.blogs #tab_blogs.black,
-body.swaps #tab_swaps.black,
-body.photos #tab_photos.black,
-body.tribes #tab_tribes.black,
-body.tweets #tab_tweets.black,
-body.bookmarks #tab_bookmarks.black,
-body.locations #tab_locations.black,
-body.inbox #tab_inbox.black,
-body.pianostore #tab_pianostore.black
-{
-    /*margin: 0; [> to compensate for border <]*/
-    /*padding: 5px 0 5px;*/
-    background-color: #333; /* selected tab colour */
-    border-left: 1px solid #000; /* tab border */
-    border-top: 1px solid #000; /* tab border */
-    border-right: 1px solid #000; /* tab border */
-}
-body.profile #tab_profile.white,
-body.blogs #tab_blogs.white,
-body.swaps #tab_swaps.white,
-body.photos #tab_photos.white,
-body.tribes #tab_tribes.white,
-body.tweets #tab_tweets.white,
-body.bookmarks #tab_bookmarks.white,
-body.locations #tab_locations.white,
-body.inbox #tab_inbox.white,
-body.pianostore #tab_pianostore.white
-{
-    /*margin: 0; [> to compensate for border <]*/
-    /*padding: 5px 0 5px;*/
-    background-color: #ccc; /* selected tab colour */
-    border-left: 1px solid #fff; /* tab border */
-    border-top: 1px solid #fff; /* tab border */
-    border-right: 1px solid #fff; /* tab border */
+    border-style: inset;
 }

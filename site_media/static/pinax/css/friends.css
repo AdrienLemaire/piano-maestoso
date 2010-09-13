@@ -14,7 +14,7 @@ table.contact_list td {
 }
 .friendship_request {
     padding: 5px;
-    background: #DEF;
+    background: #ddd;
     border: 1px solid #9BC;
 }
 .friendship_request p {
@@ -46,9 +46,10 @@ h2.join_date, h2.creation_date {
 /* FRIENDS */
 
 div.friends {
-    background: #DEF;
+    background: #ddd;
     padding: 8px;
     margin-bottom: 20px;
+    margin-right: 5px;
 }
 div.friends h2 {
     margin: 0 0 5px 0;

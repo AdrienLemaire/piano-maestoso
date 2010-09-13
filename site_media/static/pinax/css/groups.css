@@ -1,16 +1,17 @@
 /* GROUPS */
 
 div.groups {
-    background: #DEF;
+    background: #ddd;
     padding: 8px;
     margin-bottom: 20px;
+    margin-right: 5px;
 }
 div.groups h2 {
     margin: 0 0 5px 0;
     padding: 0;
 }
 div.members {
-    background: #DEF;
+    background: #ddd;
     padding: 8px;
     margin-bottom: 20px;
 }
