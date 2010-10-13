@@ -7,3 +7,6 @@ site_media/media/
 local_settings.py
 logs/cron_mail.log
 logs
+celery*
+*.bak
+tmp/
