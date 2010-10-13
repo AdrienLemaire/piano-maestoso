@@ -244,6 +244,12 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
 LOGIN_REDIRECT_URLNAME = "what_next"
 
+LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
+PINAX_LOG_FILE = "pinax.log"
+
+UPLOAD_DIR = os.path.join(MEDIA_ROOT, "pianostore", "uploads")
+UPLOAD_URL = os.path.join("pianostore", "uploads")
+
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 
@@ -296,3 +302,8 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+import logging
+logging.basicConfig(filename=os.path.join(LOG_DIR, PINAX_LOG_FILE),
+                   level=logging.DEBUG,
+                    datefmt="%Y-%m-%d %H:%M:%S")

@@ -1,7 +1,8 @@
 # from python
 #from time import sleep
+import os
 
-#from django
+# from django
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -10,7 +11,10 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
-#from pianostore
+# from project
+from settings import UPLOAD_DIR, UPLOAD_URL
+
+# from app
 from models import Track
 from forms import TrackForm
 
@@ -62,13 +66,32 @@ def your_tracks(request):
 def add_track(request):
     """ Add a track to the pianostore. """
     track_form = TrackForm()
+    import logging
 
     if request.method == "POST":
-        track_form = TrackForm(request.user, request.POST, request.FILES)
+        # With runserver or uwsgi
+        #track_form = TrackForm(request.user, request.POST, request.FILES)
+        # With nginx upload
+        track_form = TrackForm(request.user, request.POST)
+        logging.info("POST:%s\nFILES:%s" % (request.POST, request.FILES))
         if track_form.is_valid():
             new_track = track_form.save(commit=False)
             new_track.adder = request.user
+            import shutil
+            shutil.move(request.POST['original_track.path'],
+                os.path.join(UPLOAD_DIR,
+                    request.POST['original_track.name']
+                )
+            )
+            new_track.original_track = os.path.join(UPLOAD_URL,
+                    request.POST['original_track.name']
+                )
+            #new_track.original_track = request.POST['original_track.name']
             new_track.save()
+            from tasks import html5_videos_convert
+            #for fileext in ["mp4", "ogv", "webm"]:
+                #html5_videos_convert.delay(fileext, new_track.original_track)
+            html5_videos_convert.delay("ogv", new_track.original_track)
             request.user.message_set.create(message=_("You have successfully "
                 "uploaded track '%(title)s'") % {'title': new_track.title})
             return HttpResponseRedirect(reverse("pianostore.views.tracks"))

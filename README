@@ -11,6 +11,8 @@ INSTALLATION:
  - install django-invitation : "hg clone http://bitbucket.org/david/django-invitation",
     then from django-invitation/ , do "python setup.py install"
 
+ - install nginx 
+./configure --add-module=../nginx_upload_module-2.0.12 --add-module=../masterzen-nginx-upload-progress-module-ac62a29 --with-http_ssl_module --with-openssl=../openssl-0.9.8o  --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx.pid --lock-path=/var/lock/nginx.lock --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/body --http-proxy-temp-path=/var/lib/nginx/proxy --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --with-debug --with-http_stub_status_module --with-http_flv_module --with-http_dav_module --with-http_gzip_static_module --sbin-path=/usr/sbin/nginx --prefix=/usr
 
 
  TREE :

@@ -7,6 +7,8 @@ def numCPUs():
 
 bind = "127.0.0.1:8000"
 workers = numCPUs() * 2 + 1
-log_file = "/home/adrien/piano-maestoso/logs/gunicorn.log"
+worker_class = "eventlet"
+logfile = "/home/adrien/piano-maestoso/logs/gunicorn.log"
+loglevel = "debug"
 timeout = 3600
 #keepalive = 3600

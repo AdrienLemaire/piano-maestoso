@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # This script works only in linux
-WORKON_HOME=$(readlink -f ~/Envs)
-PROJECT_ROOT=$(readlink -f ~/piano-maestoso/)
+WORKON_HOME=$(readlink -f /home/adrien/Envs)
+PROJECT_ROOT=$(readlink -f /var/lib/django/piano-maestoso)
 
 # activate virtual environment
 . $WORKON_HOME/piano-maestoso/bin/activate

@@ -19,6 +19,7 @@ class TrackForm(forms.ModelForm):
     def __init__(self, user=None, *args, **kwargs):
         super(TrackForm, self).__init__(*args, **kwargs)
         self.user = user
+        self.fields['original_track'].required = False
         self.is_update = False
 
     def clean(self):
@@ -29,4 +30,9 @@ class TrackForm(forms.ModelForm):
                     .count() > 0:
                 raise forms.ValidationError(_("There is already a track "
                                 "with the same title in the pianostore."))
+            if Track.objects.filter(original_track=self.cleaned_data['original_track'])\
+                    .count() > 0:
+                raise forms.ValidationError(_("There is already a track "
+                                "with the same file name in the pianostore."))
         return self.cleaned_data
+

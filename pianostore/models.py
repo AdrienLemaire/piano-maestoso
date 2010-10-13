@@ -64,7 +64,7 @@ class Track(models.Model):
                               verbose_name=_('adder'))
 
     # Dates
-    date_composition = models.DateTimeField(_('date of composition'), blank=True)
+    date_composition = models.DateTimeField(_('date of composition'), blank=True, null=True)
     date_added = models.DateTimeField(_('added'), default=datetime.datetime.now)
     #date_updated = models.DateTimeField(_('added'), default=datetime.datetime.now)
 

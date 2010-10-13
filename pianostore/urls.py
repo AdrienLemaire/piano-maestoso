@@ -2,7 +2,7 @@
 from django.conf.urls.defaults import *
 
 # from pianostore
-from models import Track
+#from models import Track
 
 urlpatterns = patterns('pianostore.views',
         url(r'^$', 'tracks', name="all_tracks"),

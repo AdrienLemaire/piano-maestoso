@@ -1,0 +1,10 @@
+<uwsgi>
+    <!--<pythonpath>/home/adrien/Envs/piano-maestoso/lib/python2.5/site-packages/</pythonpath>-->
+    <home>/home/adrien/Envs/piano-maestoso/</home>
+    <pythonpath>/var/lib/django/piano-maestoso/</pythonpath>
+    <pythonpath>/var/lib/django/</pythonpath>
+    <app mountpoint="/">
+        <script>django_wsgi</script>;
+    </app>
+</uwsgi>
+

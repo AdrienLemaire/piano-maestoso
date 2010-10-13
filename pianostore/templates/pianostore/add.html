@@ -8,11 +8,12 @@
 {% block body %}
     <h1>{% trans "Add Track" %}</h1>
  
-    <form enctype="multipart/form-data" method="POST" action="" class="uniForm">
+    <form enctype="multipart/form-data" method="POST" action="/pianostore/upload/" class="uniForm">
         {% csrf_token %}
         <fieldset class="inlineLabels">
             {{ track_form|as_uni_form }}
             <div class="form_block">
+                <input type="hidden" name="upload" value="upload">
                 <input type="submit" value="{% trans 'add track' %}">
             </div>
         </fieldset>

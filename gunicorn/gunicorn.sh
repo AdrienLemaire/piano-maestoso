@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ### BEGIN INIT INFO
 # Provides:       seismic_web
@@ -13,17 +13,22 @@
 USER=adrien
 NAME="piano_maestoso"
 PYTHON_PATH="/home/adrien/Envs/piano-maestoso/bin/python"
-MANAGE_PATH="/home/adrien/piano-maestoso/manage.py"
-GUNICORN_CONFIG_PATH="/home/adrien/piano-maestoso/gunicorn_conf.py"
+MANAGE_PATH="/var/lib/django/piano-maestoso/manage.py"
+GUNICORN_CONFIG_PATH="/var/lib/django/piano-maestoso/gunicorn/gunicorn_conf.py"
 # Confdir: the Django project inside the virtualenv
-CONFDIR="/home/adrien/piano-maestoso/"
+CONFDIR="/var/lib/django/piano-maestoso/"
 #VENV_ACTIVATION=". ../bin/activate"
 RETVAL=0
 # PID: I always name my gunicorn pidfiles this way
 PID="/tmp/gunicorn_"$NAME".pid"
 #COMMAND="$GUNICORN_RUN --daemon --pid $PID"
 GUNICORN_RUN="$PYTHON_PATH $MANAGE_PATH run_gunicorn --daemon --pid $PID -c $GUNICORN_CONFIG_PATH"
+echo "$GUNICORN_RUN"
 
+if [ -f "$GUNICORN_CONFIG_PATH" ]; then :
+else
+    echo "Can't find $GUNICORN_CONFIG_PATH" && exit 1
+fi
 # source function library
 . /lib/lsb/init-functions
 
