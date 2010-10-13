@@ -89,9 +89,9 @@ def add_track(request):
             #new_track.original_track = request.POST['original_track.name']
             new_track.save()
             from tasks import html5_videos_convert
-            #for fileext in ["mp4", "ogv", "webm"]:
-                #html5_videos_convert.delay(fileext, new_track.original_track)
-            html5_videos_convert.delay("ogv", new_track.original_track)
+            for fileext in ["mp4", "ogv", "webm"]:
+                html5_videos_convert.delay(fileext, new_track.original_track)
+            #html5_videos_convert.delay("ogv", new_track.original_track)
             request.user.message_set.create(message=_("You have successfully "
                 "uploaded track '%(title)s'") % {'title': new_track.title})
             return HttpResponseRedirect(reverse("pianostore.views.tracks"))
