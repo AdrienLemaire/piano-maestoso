@@ -32,36 +32,33 @@ def _convert(track, fileext, logger):
     input = track.original_track.file.name
     if fileext == "ogv":
         logger.info(commands.getoutput('ffmpeg2theora --videoquality 5 '
-           '--audioquality 1 --videobitrate 200 --max_size 320x240 --output '
+           '--audioquality 1 --videobitrate 200 --output '
            '/tmp/%s.ogv %s' % (filename, input)))
     else:
-        logger.info('/usr/local/bin/ffmpeg -i %s -sameq /tmp/%s.%s' % (input, filename, fileext))
-        call('/usr/local/bin/ffmpeg -i %s -sameq /tmp/%s.%s' % (input, filename, fileext), shell=True)
-    logger.info("open('/tmp/%s.%s' % (" + filename + ", " + fileext + "), 'r')")
+        logger.info(commands.getoutput('/usr/local/bin/ffmpeg -i %s -sameq /tmp/%s.%s' % (input, filename, fileext)))
     #Open the file and put it in a friendly format to save the image
     f = open('/tmp/%s.%s' % (filename, fileext), 'r')
     filecontent = ContentFile(f.read())
-    logger.info("%s adds track_%s fields" % (track, fileext))
-    track.__getattribute__("track_" + fileext).save('%s.%s' % (filename, fileext), filecontent , save=True)
-    logger.info("video done")
     f.close()
-    if track.image:
-        pass
-    else:
-        #logger.info('/usr/local/bin/ffmpeg -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (filename, fileext, filename))
-        #call('/usr/local/bin/ffmpeg -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (filename, fileext, filename), shell=True)
-        logger.info("About to execute commands.getoutput ...")
+    logger.info("%s adds track_%s fields" % (track, fileext))
+    logger.info("track.track_%s.save('%s.%s') : %s" % (fileext, filename, fileext, track.__getattribute__("track_%s" % fileext)))
+    logger.info(track.__getattribute__("track_%s" % fileext).save('%s.%s' % (filename, fileext), filecontent , save=True))
+    logger.info("track.track_%s.save('%s.%s') : %s" % (fileext, filename, fileext, track.__getattribute__("track_%s" % fileext)))
+    if not track.image and fileext == "mp4":
         logger.info(commands.getoutput('/usr/local/bin/ffmpeg -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (filename, fileext, filename)))
-        logger.info("commands.getoutput done. About to open the file...")
         f = open('/tmp/%s1.png' % filename, 'r')
         filecontent = ContentFile(f.read())
+        f.close()
         image = Photo(title=filename, title_slug=filename)
+        logger.info("image : %s (filename: %s)" % (image, filename))
         image.image.save('%s.png' % filename, filecontent , save=True)
+        logger.info("image saved")
         image.save()
         track.image = image
+    logger.info(commands.getoutput("rm /tmp/%s1.png" % filename))
     #Clean the flv and png files left around
     #call("find . -maxdepth 1 -type f -name '*." + fileext + "' -o -name '*.png' | xargs rm", shell=True)
-    call("rm /tmp/*." + fileext + " *.png *.stt", shell=True)
+    logger.info(commands.getoutput("rm /tmp/*.%s" % fileext))
     track.save()
     logger.info('Converted' + track.__getattribute__("track_" + fileext).file.name)
 

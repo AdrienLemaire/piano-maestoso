@@ -2,11 +2,14 @@
 #from time import sleep
 import os
 
+
 # from django
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
@@ -131,3 +134,23 @@ def delete_track(request, track_id):
         request.user.message_set.create(message=_("Track Deleted"))
 
     return HttpResponseRedirect(reverse("pianostore.views.tracks"))
+
+
+def upload_progress(request):
+    """
+    Return JSON object with information about the progress of an upload.
+    """
+    progress_id = None
+    if 'X-Progress-ID' in request.GET:
+        progress_id = request.GET['X-Progress-ID']
+    elif 'X-Progress-ID' in request.META:
+        progress_id = request.META['X-Progress-ID']
+    if progress_id:
+        from django.utils import simplejson
+        cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], progress_id)
+        data = cache.get(cache_key)
+        json = simplejson.dumps(data)
+        return HttpResponse(json)
+    else:
+        return HttpResponseBadRequest('Server Error: You must provide X-Progress-ID header or query param.')
+

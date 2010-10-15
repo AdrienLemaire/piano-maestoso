@@ -16,4 +16,5 @@ urlpatterns = patterns('pianostore.views',
             name="update_track"),
         url(r'^(\d+)/delete/$', 'delete_track',
             name="delete_track"),
+        url(r"^upload_progress/$", "upload_progress", name="upload_progress"),
     )

@@ -1,12 +1,13 @@
 {% extends "pianostore/base.html" %}
- 
+
 {% load i18n %}
 {% load uni_form_tags %}
 {% load avatar_tags %}
 {% load comments_tag %}
- 
+
 {% block head_title %}{% blocktrans %}Track Description{% endblocktrans %}{% endblock %}
- 
+
+
 {% block body %}
     <h1>{{ track.title }}</h1>
         <p>
@@ -24,13 +25,21 @@
             <div class="body">
                 <strong><i>{{ track.artist }}<br />{{ track.composer }}<br /></strong></i>
                             {{ track.description|linebreaks }}
+
                 <video width="320" height="240" controls preload tabindex="0">
-                    <source src="{{ MEDIA_URL }}{{ track.track_mp4 }}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                    <source src="{{ MEDIA_URL }}{{ track.track_webm }}" type='video/webm; codecs="vp8, vorbis"'>
-                    <source src="{{ MEDIA_URL }}{{ track.track_ogv }}"  type='video/ogg; codecs="theora, vorbis"'>
-                    <p> {% blocktrans %}Your browser is old.{% endblocktrans %} <a href="{{ track.track_mp4 }}"> {% blocktrans %}Download this video instead.{% endblocktrans %}</a> </p> 
+                    <source src="{{ MEDIA_URL }}{{ track.track_mp4 }}"
+                            type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    <source src="{{ MEDIA_URL }}{{ track.track_webm }}"
+                            type='video/webm; codecs="vp8, vorbis"'>
+                    <source src="{{ MEDIA_URL }}{{ track.track_ogv }}"
+                            type='video/ogg; codecs="theora, vorbis"'>
+                        <p> {% blocktrans %}Your browser is old.{% endblocktrans %}
+                            <a href="{{ MEDIA_URL }}{{ track.track_mp4 }}">
+                                {% blocktrans %}Download this video instead.{% endblocktrans %}
+                            </a>
+                        </p>
                 </video>
-                </video>
+
                 {% if not track.track_mp4 %}
                     {% blocktrans %}<br />The video is currently being converted to web formats, please come back later{% endblocktrans %}
                 {% endif %}
@@ -70,5 +79,5 @@
             <h3 id="comments">{% blocktrans %}Comments on this Track{% endblocktrans %}:</h3>
             {% comments track %}
         </p>
- 
+
 {% endblock %}

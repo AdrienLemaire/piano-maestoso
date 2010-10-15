@@ -308,7 +308,9 @@ div.right_panel {
     float: right;
     z-index: 999;
 }
-.covertart {
-    max-width: 320px;
-    max-height: 24px;
+.coverart {
+    width: 90%;
+}
+.coverart img{
+    max-width: 50%;
 }
