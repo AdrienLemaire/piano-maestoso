@@ -1,6 +1,7 @@
 *swp
 *swo
 *pyc
+*pyo
 *.db
 .venv
 site_media/media/
