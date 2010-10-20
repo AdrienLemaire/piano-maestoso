@@ -307,3 +307,6 @@ import logging
 logging.basicConfig(filename=os.path.join(LOG_DIR, PINAX_LOG_FILE),
                    level=logging.DEBUG,
                     datefmt="%Y-%m-%d %H:%M:%S")
+
+FFMPEG_PATH = ""
+FFMPEG2THEORA_PATH = ""

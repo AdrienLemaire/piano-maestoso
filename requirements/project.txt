@@ -7,4 +7,10 @@
 # See http://pip-installer.org/requirement-format.html for more information.
 #
 django-rosetta==0.5.6
+PIL
+psycopg2
 BeautifulSoup
+celery
+django-celery
+http://projects.unbit.it/downloads/uwsgi-latest.tar.gz
+

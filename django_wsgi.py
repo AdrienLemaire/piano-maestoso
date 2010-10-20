@@ -1,7 +1,7 @@
 import os
 import django.core.handlers.wsgi
 import sys
-logfile = open("/var/lib/django/piano-maestoso/tmp/path.log", "a")
+logfile = open("/home/fandekasp/piano-maestoso/tmp/path.log", "a")
 for path in sys.path:
     logfile.write(path + "\n")
 logfile.close()
