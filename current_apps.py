@@ -1,0 +1,63 @@
+INSTALLED_APPS = [
+    # Django
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.sites",
+    "django.contrib.messages",
+    "django.contrib.humanize",
+    "django.contrib.markup",
+    "django.contrib.sitemaps",
+
+    "pinax.templatetags",
+
+    # external
+    "notification", # must be first
+    "staticfiles",
+    "debug_toolbar",
+    "mailer",
+    "uni_form",
+    "django_openid",
+    "ajax_validation",
+    "timezones",
+    "emailconfirmation",
+    "announcements",
+    "pagination",
+    "friends",
+    "messages",
+    "oembed",
+    "groups",
+    "threadedcomments",
+    "wakawaka",
+    "swaps",
+    "voting",
+    "tagging",
+    "bookmarks",
+    "photologue",
+    "avatar",
+    "flag",
+    "microblogging",
+    "locations",
+    "django_sorting",
+    "django_markup",
+    "tagging_ext",
+    "rosetta",
+    #"invitation",
+
+    # Pinax
+    "pinax.apps.account",
+    "pinax.apps.signup_codes",
+    "pinax.apps.analytics",
+    "pinax.apps.profiles",
+    "pinax.apps.blog",
+    "pinax.apps.tribes",
+    "pinax.apps.photos",
+    "pinax.apps.topics",
+    "pinax.apps.threadedcomments_extras",
+    "pinax.apps.voting_extras",
+
+    # project
+    "about",
+    "pianostore",
+]

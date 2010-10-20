@@ -8,7 +8,7 @@ from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand, CommandError
 
 # from project
-from settings import FFMPEG_PATH, FFMPEG2THEORA_PATH
+from django.conf import settings
 
 # from apps
 from pianostore.models import Track
@@ -33,12 +33,16 @@ class Command(BaseCommand):
 def _convert(track, fileext, logger):
     filename =  track.title_slug
     input = track.original_track.file.name
+    logger.info(filename)
+    logger.info(input)
+    logger.info(fileext)
     if fileext == "ogv":
         logger.info(commands.getoutput('%s --videoquality 5 '
            '--audioquality 1 --videobitrate 200 --output '
-           '/tmp/%s.ogv %s' % (FFMPEG2THEORA_PATH, filename, input)))
+           '/tmp/%s.ogv %s' % (settings.FFMPEG2THEORA_PATH, filename, input)))
     else:
-        logger.info(commands.getoutput('%s -i %s -sameq /tmp/%s.%s' % (FFMPEG_PATH, input, filename, fileext)))
+        logger.info('%s -i %s -sameq /tmp/%s.%s' % (settings.FFMPEG_PATH, input, filename, fileext))
+        logger.info(commands.getoutput('%s -i %s -sameq /tmp/%s.%s' % (settings.FFMPEG_PATH, input, filename, fileext)))
     #Open the file and put it in a friendly format to save the image
     f = open('/tmp/%s.%s' % (filename, fileext), 'r')
     filecontent = ContentFile(f.read())
@@ -48,7 +52,7 @@ def _convert(track, fileext, logger):
     logger.info(track.__getattribute__("track_%s" % fileext).save('%s.%s' % (filename, fileext), filecontent , save=True))
     logger.info("track.track_%s.save('%s.%s') : %s" % (fileext, filename, fileext, track.__getattribute__("track_%s" % fileext)))
     if not track.image and fileext == "mp4":
-        logger.info(commands.getoutput('%s -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (FFMPEG_PATH, filename, fileext, filename)))
+        logger.info(commands.getoutput('%s -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (settings.FFMPEG_PATH, filename, fileext, filename)))
         f = open('/tmp/%s1.png' % filename, 'r')
         filecontent = ContentFile(f.read())
         f.close()
@@ -68,7 +72,7 @@ def _convert(track, fileext, logger):
 
 def convert(options, args):
     """
-    Converts the track to flv format using FFMPEG_PATH and creates a stil for preview
+    Converts the track to flv format using settings.FFMPEG_PATH and creates a stil for preview
     """
     #reset = options.get('reset', None)
 
@@ -78,7 +82,7 @@ def convert(options, args):
     #print "apres modif :" + os.environ['PATH']
 
     for track in Track.objects.all():
-        #Convert the vidoes using FFMPEG_PATH
+        #Convert the vidoes using settings.FFMPEG_PATH
         if not args:
             raise Exception("You should add an argument : [mp4|webm|ogv]")
         #if not track.__getattribute__("track_" + args[0]):
