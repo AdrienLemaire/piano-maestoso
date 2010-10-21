@@ -80,14 +80,6 @@
 
             {% block body_outer %}
                 <div id="body">
-                    <div id="right_tabs" >
-                        <div class="login">
-                            {% block login %}{% endblock %}
-                            {% block locale_switcher %}{% endblock %}
-                            <div style="text-align: right;"></div>
-                        </div>
-                        {% block right_tabs %}{% endblock %}
-                    </div>
                     <div id="body_block">
                         {% block body %}
                         {% endblock %}
@@ -97,6 +89,15 @@
                     <!--<div class="clearboth"></div>-->
                 </div>
             {% endblock %}
+            <div id="right_tabs" >
+                <div class="login">
+                    {% block login %}{% endblock %}
+                    {% block locale_switcher %}{% endblock %}
+                    <div style="text-align: right;"></div>
+                </div>
+                {% block right_tabs %}{% endblock %}
+            </div>
+
         </div>
 
         <script src="{% block jquery_src %}{{ STATIC_URL }}pinax/js/jquery-1.3.2.min.js{% endblock %}"></script>
