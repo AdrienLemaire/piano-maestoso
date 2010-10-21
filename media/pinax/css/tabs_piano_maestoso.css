@@ -19,6 +19,12 @@
     vertical-align:middle;
     margin-left: 10px;
 }
+#menu_button {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    z-index:2;
+}
 .whitecontainer {
     margin: auto auto;
     /*height: 850px;*/

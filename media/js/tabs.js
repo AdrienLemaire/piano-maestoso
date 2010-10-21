@@ -165,3 +165,13 @@ function PlaySound(e) {
 }
 //Run the setup routine when this script executes
 Setup();
+
+//$("#menu_button").position({
+    //of: $("#right_tabs"),
+    //my: "center top",
+    //at: "left bottom",
+    //collison: "fit flip",
+//});
+$("#menu_button").click(function(){
+    $("#right_tabs, .whitecontainer, .blackcontainer").slideToggle("slow");
+});
