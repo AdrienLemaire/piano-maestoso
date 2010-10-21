@@ -42,20 +42,26 @@
 
 {% block right_tabs %}
     {% if user.is_authenticated %}
-        <ul class="tabs">{% spaceless %}
-            <li class="white b1">&nbsp;</li>
-            <li class="black as1">&nbsp;</li>
-            <li id="tab_profile" class="white a1"><a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a></li>
-            <li id="tab_pianostore" class="black gs1"><a href="{% url all_tracks %}">{% trans "Piano" %}</a></li>
-            <li id="tab_photos" class="white g1"><a href="{% url photos %}">{% trans "Photos" %}</a></li>
-            <li id="tab_blogs" class="black fs1"><a href="{% url blog_list_all %}">{% trans "Blogs" %}</a></li>
-            <li id="tab_tribes" class="white f1"><a href="{% url tribe_list %}">{% trans "Tribes" %}</a></li>
-            <li id="tab_tweets" class="white e1"><a href="{% url tweets_you_follow %}">{% trans "Tweets" %}</a></li>
-            <li id="tab_bookmarks" class="black ds1"><a href="{% url all_bookmarks %}">{% trans "Bookmarks" %}</a></li>
-            <li id="tab_swaps" class="white d1"><a href="{% url offer_list_all %}">{% trans "Swaps" %}</a></li>
-            <li id="tab_locations" class="black cs1"><a href="{% url loc_yours %}">{% trans "Locations" %}</a></li>
-            <li id="tab_inbox" class="white c1"><a href="{% url messages_inbox %}">{% trans "Inbox" %} ({{ combined_inbox_count }})</a></li>
-        {% endspaceless %}</ul>
+        <div class="blackcontainer">
+            <div class="blackkey2set">
+                <div id="tab_pianostore" class="as1 blackkey2set1"><a href="{% url all_tracks %}">{% trans "Piano" %}</a></div>
+                <div id="tab_blogs" class="gs1 blackkey2set2"><a href="{% url blog_list_all %}">{% trans "Blogs" %}</a></div>
+            </div>
+            <div class="blackkey3set">
+                <div id="tab_tweets" class="fs1 blackkey3set1"><a href="{% url tweets_you_follow %}">{% trans "Tweets" %}</a></div>
+                <div id="tab_locations" class="ds1 blackkey3set2"><a href="{% url loc_yours %}">{% trans "Locations" %}</a></div>
+                <div class="cs1 blackkey3set3">&nbsp;</div>
+            </div>
+        </div>
+        <div class="whitecontainer">
+            <div id="tab_profile" class="b1"><a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a></div>
+            <div id="tab_photos" class="a1"><a href="{% url photos %}">{% trans "Photos" %}</a></div>
+            <div id="tab_tribes" class="g1"><a href="{% url tribe_list %}">{% trans "Tribes" %}</a></div>
+            <div id="tab_bookmarks" class="f1"><a href="{% url all_bookmarks %}">{% trans "Bookmarks" %}</a></div>
+            <div id="tab_swaps" class="e1"><a href="{% url offer_list_all %}">{% trans "Swaps" %}</a></div>
+            <div id="tab_inbox" class="d1"><a href="{% url messages_inbox %}">{% trans "Inbox" %} ({{ combined_inbox_count }})</a></div>
+            <div class="c1">&nbsp;</div>
+        </div>
     {% endif %}
 {% endblock %}
 

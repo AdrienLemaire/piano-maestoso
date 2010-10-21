@@ -1,7 +1,7 @@
 /* GENERAL */
 
 html, body {
-    min-width: 850px;
+    /*min-width: 850px;*/
     height:100%;
     margin:0;
     padding:0;
@@ -38,7 +38,7 @@ h1 {
 
 #container {
     position:relative;
-    min-width:850px;
+    width: 690px;
 }
 #body {
     padding-bottom: 20%;
@@ -46,7 +46,6 @@ h1 {
 #body_block {
     position: absolute;
     right:180px;
-    min-width: 625px;
     left:0;
     background-color: #fff;
     -moz-border-radius-bottomright: 170px;

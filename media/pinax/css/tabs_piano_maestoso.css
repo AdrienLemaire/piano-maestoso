@@ -1,50 +1,282 @@
 /* GENERAL TAB STYLING */
 
-#left_tabs {
-    /*position: absolute;*/
-    bottom: -1px; /* must be same thickness as tab border */
-    /*left: 210px; [> based on width and padding of logo <]*/
-}
 #right_tabs {
-    /*min-width:160px;*/
-    width:170px;
-    /*max-width:220px;*/
-    /*background-color: #000;*/
-    /*background: -moz-linear-gradient(100% 100% 180deg, #444, #000);*/
-    /*background: -webkit-gradient(linear, left top, right top, from(#000), to(#444));*/
-    /*width: 20%;*/
-    position: absolute;
+/*    width:400px;*/
+    position: fixed;
     top: 0;
-    min-height:450px;
-    height:50%;
-    right:10px;
+    /*bottom:0;*/
+    right: 5px;
+    /*background-color:blue;*/
+    height: 370px;
+    width: 410px;
+    margin: auto auto;
+    border: 2px solid silver;
+    background: #663300;
 }
-#right_tabs>.login {
-    position: relative;
-    top: 6px;
-    right: 320px;
-    width:310px;
-    color: #555; /* login bar text colour */
-    z-index:1;
-}
-#right_tabs>.login a, #right_tabs>.login a:visited {
-    color: #aaa; /* login bar link colour */
-}
-#right_tabs>.login a:hover {
-    color: #FFF; /* login bar link hover colour */
-}
-
-ul.tabs a, ul.tabs a:visited {
+#right_tabs a, #right_tabs a:visited {
     font-weight: bold;
     text-decoration: none;
+    vertical-align:middle;
+    margin-left: 10px;
+}
+.whitecontainer {
+    margin: auto auto;
+    /*height: 850px;*/
+    width: 400px;
+    padding:  18px 10px 2px 10px;
+    position:fixed;
+    left:auto;
+    top:auto;
+}
+
+.blackcontainer
+    {
+    margin: 0px;
+    /*height: 840px;*/
+    width: 200px;
+    padding:  36px 0px 2px 10px;
+    position:fixed;
+    right:15px;
+    top:auto;
+    z-index: 1;
+    }
+.blackcontainer>div>div {
+    background: black;
+    line-height: 20px;
+    /*text-align: center;*/
+}
+.blackcontainer a {
+    color: white;
+}
+
+/* whitekey */
+.whitecontainer>div
+    {
+    background: white;
+
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    border-right: 0px outset;
+    border-bottom: 4px outset;
+    border-left: 4px outset;
+    border-top: 4px outset;
+
+    width: 98%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+
+    }
+.whitecontainer a {
+    color: black;
+}
+
+.whitecontainer>div:hover
+    {
+    background: #FF9999 url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
+
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    border-right: 0px outset #FF9999;
+    border-bottom: 4px outset #FF9999;
+    border-left: 4px outset #FF9999;
+    border-top: 4px outset #FF9999;
+
+    float: left;
+    }
+.whitecontainer>div:active
+    {
+    border-right: 0px inset #FF9999;
+    border-bottom: 4px inset #FF9999;
+    border-left: 4px inset #FF9999;
+    border-top: 4px inset #FF9999;
+    }
+
+
+/******** BEGIN BLACK KEYS TWO SET ********/
+.blackkey2set
+    {
+
+    width: 100%;
+    height: 104px;
+    float: left;
+    margin-bottom: 42px;
+
+
+    }
+
+.blackkey2set1
+    {
+    margin-right:0px;
+    margin-bottom: 14px;
+    margin-left: 0px;
+    margin-top:12px;
+
+    border-right: 0px inset #666666;
+    border-bottom: 6px inset #666666;
+    border-left: 6px inset #666666;
+    border-top: 6px inset #666666;
+
+    width: 99%;
+    height: 22px;
+    float: left;
+    }
+
+    /*HOVER*/
+        .blackkey2set1:hover{background: #333333;}
+    /*ACTIVE*/
+        .blackkey2set1:active
+            {border-right: 0px;
+            border-bottom: 6px solid #333333;
+            border-left: 6px solid #333333;
+            border-top: 6px solid #333333;
+            background: #333333;}
+
+.blackkey2set2
+    {
+    margin-right:0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    border-right: 0px inset #666666;
+    border-bottom: 6px inset #666666;
+    border-left: 6px inset #666666;
+    border-top: 6px inset #666666;
+
+    width: 99%;
+    height: 22px;
+    float: left;
+    }
+    /*HOVER*/
+        .blackkey2set2:hover {background: #333333;}
+    /*ACTIVE*/
+        .blackkey2set2:active
+            {border-right: 0px;
+            border-bottom: 6px solid #333333;
+            border-left: 6px solid #333333;
+            border-top: 6px solid #333333;
+            background: #333333;}
+
+
+/******** END BLACK KEYS TWO SET ********/
+
+
+/******** BEGIN BLACK KEYS THREE SET ********/
+
+.blackkey3set
+    {
+
+    width: 100%;
+    height: 146px;
+    float: left;
+    margin-bottom: 44px;
+    }
+.blackkey3set1
+    {
+    margin-right:0px;
+    margin-bottom: 14px;
+    margin-left: 0px;
+    margin-top:10px;
+
+    border-right: 0px inset #666666;
+    border-bottom: 6px inset #666666;
+    border-left: 6px inset #666666;
+    border-top: 6px inset #666666;
+
+    width: 99%;
+    height: 22px;
+    float: left;
+    }
+    /*HOVER*/
+        .blackkey3set1:hover{background: #333333;}
+    /*ACTIVE*/
+        .blackkey3set1:active
+            {border-right: 0px;
+            border-bottom: 6px solid #333333;
+            border-left: 6px solid #333333;
+            border-top: 6px solid #333333;
+            background: #333333;}
+
+.blackkey3set2
+    {
+    margin-right:0px;
+    margin-bottom: 14px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    border-right: 0px inset #666666;
+    border-bottom: 6px inset #666666;
+    border-left: 6px inset #666666;
+    border-top: 6px inset #666666;
+
+    width: 99%;
+    height: 22px;
+    float: left;
+    }
+    /*HOVER*/
+        .blackkey3set2:hover{background: #333333;}
+    /*ACTIVE*/
+        .blackkey3set2:active
+            {border-right: 0px;
+            border-bottom: 6px solid #333333;
+            border-left: 6px solid #333333;
+            border-top: 6px solid #333333;
+            background: #333333;}
+
+
+.blackkey3set3
+    {
+    margin-right:0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    border-right: 0px inset #666666;
+    border-bottom: 6px inset #666666;
+    border-left: 6px inset #666666;
+    border-top: 6px inset #666666;
+
+    width: 99%;
+    height: 22px;
+    float: left;
+    }
+    /*HOVER*/
+        .blackkey3set3:hover{background: #333333;}
+    /*ACTIVE*/
+        .blackkey3set3:active
+            {border-right: 0px;
+            border-bottom: 6px solid #333333;
+            border-left: 6px solid #333333;
+            border-top: 6px solid #333333;
+            background: #333333;}
+
+
+
+
+
+
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width:100%;
+    height:100%;
 }
 ul.tabs li {
-    position: absolute;
-    list-style-type: none;
+    position: relative;
     background: url(/site_media/static/pinax/img/alert-overlay.png) repeat-x;
-    padding: 5px 10px 6px;
+    /*padding: 5px 10px 6px;*/
+    display: block;
+    width:100%;
+    height:8.33%;
     font-weight: bold;
-    line-height: 1;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -53,26 +285,18 @@ ul.tabs li {
     border-bottom: 1px solid rgba(0,0,0,0.25);
     cursor: pointer;
 }
-ul.tabs li a {
-    /*padding: 5px 12px;*/
-    display: block;
-    width: 100%;
+ul.tabs a, ul.tabs a:visited {
+    font-weight: bold;
+    text-decoration: none;
 }
-ul.tabs {
-    margin: 0;
-    padding-left: 0;
-    position: relative;
-    left: 5%;
-    top: 23px;
-    z-index:2;
-}
+
 
 /* Colors tabs */
 ul.tabs .black a, ul.tabs .black a:visited {
-    color: #fff; /* unselected tab text colour */
+    color: #fff;
 }
 ul.tabs .white a, ul.tabs .white a:visited {
-    color: #000; /* unselected tab text colour */
+    color: #000;
 }
 ul.tabs li.black:hover {
     border-color: rgba(0,0,0,0.25);
@@ -90,11 +314,11 @@ ul.tabs li.white:hover {
 }
 ul.tabs li.black {
     background-color: #000;
-    width: 60%;
+    width: 80%;
 }
 ul.tabs li.white {
     background-color: #fff;
-    width: 80%;
+    width: 100%;
 }
 
 
