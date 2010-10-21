@@ -8,6 +8,9 @@ from models import Track
 
 class TrackForm(forms.ModelForm):
     """ Track Form: form associated to the Track model """
+    rotation = forms.IntegerField(
+        max_value="180",
+        help_text=_("Rotation to apply on the video"))
 
     class Meta:
         model = Track
@@ -20,6 +23,12 @@ class TrackForm(forms.ModelForm):
         super(TrackForm, self).__init__(*args, **kwargs)
         self.user = user
         self.fields['original_track'].required = False
+        rotation = self.fields.keyOrder.pop(
+            self.fields.keyOrder.index("rotation")
+        )
+        self.fields.keyOrder.insert(
+            self.fields.keyOrder.index("title"), rotation
+        )
         self.is_update = False
 
     def clean(self):

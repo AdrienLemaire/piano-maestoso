@@ -1,7 +1,7 @@
 # from python
 #from time import sleep
 import os
-
+import logging
 
 # from django
 from django.shortcuts import render_to_response, get_object_or_404
@@ -15,11 +15,13 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
 # from project
-from settings import UPLOAD_DIR, UPLOAD_URL
+from django.conf import settings
 
 # from app
 from models import Track
 from forms import TrackForm
+from tasks import html5_videos_convert
+from tasks import rotate_video
 
 
 def tracks(request):
@@ -69,7 +71,6 @@ def your_tracks(request):
 def add_track(request):
     """ Add a track to the pianostore. """
     track_form = TrackForm()
-    import logging
 
     if request.method == "POST":
         # With runserver or uwsgi
@@ -80,21 +81,23 @@ def add_track(request):
         if track_form.is_valid():
             new_track = track_form.save(commit=False)
             new_track.adder = request.user
-            import shutil
-            shutil.move(request.POST['original_track.path'],
-                os.path.join(UPLOAD_DIR,
-                    request.POST['original_track.name']
-                )
-            )
-            new_track.original_track = os.path.join(UPLOAD_URL,
-                    request.POST['original_track.name']
-                )
-            #new_track.original_track = request.POST['original_track.name']
+            new_track.original_track = os.path.join(settings.UPLOAD_URL,
+                    request.POST['original_track.name'])
             new_track.save()
-            from tasks import html5_videos_convert
+
+            # The video process should be done like this :
+                #- ffmpeg convert to avi            <= These 2 parts can be avoid
+                #- mencode rotate the video         <= if no rotation needed
+                #- ffmpeg2theora convert to ogv
+                #- ffmpeg convert to mp4 and webm
+            rotate_video(
+                request.POST['original_track.path'],
+                request.POST['original_track.name'],
+                request.POST['rotation']
+            )
             for fileext in ["mp4", "ogv", "webm"]:
                 html5_videos_convert.delay(fileext, new_track.original_track)
-            #html5_videos_convert.delay("ogv", new_track.original_track)
+
             request.user.message_set.create(message=_("You have successfully "
                 "uploaded track '%(title)s'") % {'title': new_track.title})
             return HttpResponseRedirect(reverse("pianostore.views.tracks"))

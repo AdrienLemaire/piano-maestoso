@@ -237,6 +237,7 @@ DEBUG_TOOLBAR_CONFIG = {
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
 FFMPEG_PATH = ""
+MENCODER_PATH = ""
 FFMPEG2THEORA_PATH = ""
 
 try:

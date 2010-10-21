@@ -1,11 +1,12 @@
 # from python
-from optparse import make_option
-from subprocess import call
+#from optparse import make_option
+#from subprocess import call
 import commands
 
 # from django
 from django.core.files.base import ContentFile
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
+#from django.core.management.base import CommandError
 
 # from project
 from django.conf import settings
