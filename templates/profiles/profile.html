@@ -120,7 +120,7 @@
                 {% if other_user.added_tracks.all %}
                     <table class="pianostore narrow">
                         {% for track in other_user.added_tracks.all.select_related %}
-                            <tr class="{% cycle odd,even %}">
+                            <tr class="{% if forloop.first %}odd{% else %}{% cycle even,even,odd,odd %}{% endif %}">
                                 <td class="meta">
                                     {{ track.added|date }}
                                 </td>

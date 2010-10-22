@@ -1,17 +1,16 @@
 /* GENERAL TAB STYLING */
 
 #right_tabs {
-/*    width:400px;*/
     position: fixed;
-    top: 0;
-    /*bottom:0;*/
-    right: 5px;
-    /*background-color:blue;*/
+    /*visibility: hidden;*/
+    display: none;
+    right:0;
     height: 370px;
     width: 410px;
     margin: auto auto;
     border: 2px solid silver;
     background: #663300;
+    z-index:3;
 }
 #right_tabs a, #right_tabs a:visited {
     font-weight: bold;
@@ -19,31 +18,29 @@
     vertical-align:middle;
     margin-left: 10px;
 }
-#menu_button {
-    position: absolute;
-    /*bottom:-20px;*/
-}
 .whitecontainer {
     margin: auto auto;
     /*height: 850px;*/
+    display: none;
     width: 400px;
     padding:  18px 10px 2px 10px;
-    position:fixed;
+    position:absolute;
     left:auto;
     top:auto;
 }
 
 .blackcontainer
-    {
+{
     margin: 0px;
+    display: none;
     /*height: 840px;*/
     width: 200px;
-    padding:  36px 0px 2px 10px;
-    position:fixed;
-    right:15px;
+    padding:  36px 8px 2px 5px;
+    position:absolute;
+    right:0;
     top:auto;
-    z-index: 1;
-    }
+    z-index: 4;
+}
 .blackcontainer>div>div {
     background: black;
     line-height: 20px;

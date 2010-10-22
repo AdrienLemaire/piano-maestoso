@@ -21,6 +21,7 @@
             }
         </style><![endif]-->
         <link rel="Stylesheet" href="{{ STATIC_URL }}css/custom-theme/jquery-ui-1.8.5.custom.css" />
+        <link rel="Stylesheet" href="{{ STATIC_URL }}css/pianostore.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/base_piano_maestoso.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/tabs_piano_maestoso.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/facebox.css" />
@@ -56,8 +57,27 @@
                 </div>
             {% endif %}
 
-            <div id="tabhead">
-                <div class="logo" dir="ltr">{% block logo_link_image %}{% endblock %}</div>
+            <div id="tabhead" class="ui-widget-header">
+                <div class="logo" dir="ltr">
+                    {% block logo_link_image %}{% endblock %}
+                </div>
+                <div class="login">
+                    {% block login %}{% endblock %}
+                    {% block locale_switcher %}{% endblock %}
+                    <div style="text-align: right;"></div>
+                    <div id="menu_button"
+                        class="ui-state-default ui-corner-all">
+                        <span class="ui-icon ui-icon-circle-triangle-n"></span>
+                        <span>{% trans "Menu" %}</span>
+                        <span class="ui-icon ui-icon-circle-triangle-n"></span>
+                        &nbsp;
+                    </div>
+                </div>
+        <!-- Menu right -->
+            <div id="right_tabs" >
+                {% block right_tabs %}{% endblock %}
+            </div>
+        <!-- /Menu right-->
                 {% if messages %}
                     <ul id="messages">
                         {% for message in messages %}
@@ -81,11 +101,6 @@
 
             {% block body_outer %}
                 <div id="body">
-                <div class="login">
-                    {% block login %}{% endblock %}
-                    {% block locale_switcher %}{% endblock %}
-                    <div style="text-align: right;"></div>
-                </div>
                     <div id="body_block">
                         {% block body %}
                         {% endblock %}
@@ -96,15 +111,6 @@
             {% endblock %}
         </div>
 
-        <!-- Menu right -->
-            <div id="right_tabs" >
-                {% block right_tabs %}{% endblock %}
-            </div>
-            <div id="menu_button" title=".ui-icon-circle-triangle-n"
-                class="ui-state-default ui-corner-all">
-                <span class="ui-icon ui-icon-circle-triangle-n"></span>
-            </div>
-        <!-- /Menu right-->
 
 
         <script src="{% block jquery_src %}{{ STATIC_URL }}js/jquery-1.4.2.min.js{% endblock %}"></script>

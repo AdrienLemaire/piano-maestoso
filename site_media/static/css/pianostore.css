@@ -1,0 +1,10 @@
+.pianostore {
+    position: relative;
+    width:80%;
+    margin: 2em auto;
+}
+.pianostore tr {
+    position: relative;
+    width: 50%;
+    float:left;
+}

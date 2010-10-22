@@ -83,4 +83,8 @@
     {% endif %}
     <script src="{{ STATIC_URL }}js/tabs.js"></script>
     {% block extra_body %}{% endblock %}
+    <script>
+            $("#menu_button").tabs();
+            $("#subnav a").tabs();
+    </script>
 {% endblock %}

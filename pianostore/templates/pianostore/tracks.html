@@ -27,7 +27,7 @@
 
         <table class="pianostore">
             {% for track in tracks %}
-                <tr class="{% cycle odd,even %}">
+            <tr class="{% if forloop.first %}odd{% else %}{% cycle even,even,odd,odd %}{% endif %}">
                     <!-- meta -->
                     <td class="meta" >
                         <div class="avatar" >{% avatar track.adder 40 %}</div>
