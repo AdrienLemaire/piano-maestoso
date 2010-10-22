@@ -1,8 +1,8 @@
 <uwsgi>
-    <!--<pythonpath>/home/adrien/Envs/piano-maestoso/lib/python2.5/site-packages/</pythonpath>-->
-    <home>/home/fandekasp/Envs/piano-maestoso/</home>
-    <pythonpath>/home/fandekasp/piano-maestoso/</pythonpath>
-    <pythonpath>/home/fandekasp/</pythonpath>
+    <!--<pythonpath>/home/adrien/envs/piano-maestoso/lib/python2.5/site-packages/</pythonpath>-->
+    <home>/home/adrien/Envs/piano-maestoso/</home>
+    <pythonpath>/var/lib/django/piano-maestoso/</pythonpath>
+    <pythonpath>/var/lib/django/</pythonpath>
     <app mountpoint="/">
         <script>django_wsgi</script>;
     </app>
