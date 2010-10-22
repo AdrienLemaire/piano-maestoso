@@ -40,7 +40,7 @@
     $("#id_rotation").after("<img id='rotation_tool' src='{{ STATIC_URL }}" +
         "pianostore/img/icon_play_video.gif'></img>");
     $("#id_rotation").hide();
-    var rot_deg = 45;
+    var rot_deg = 90;
     var rot_val = rot_deg;
     var rot=$('#rotation_tool').rotate({bind: [
             {"click":function(){
@@ -50,10 +50,18 @@
                 hint = hint + ": <b>" + rot_val + "%</b>";
                 $("#id_rotation").val(rot_val);
                 $("#hint_id_rotation").html(hint);
-                rot_deg += 45;
-                rot_val += 45;
+                rot_deg += 90;
+                rot_val += 90;
             }},
     ]});
+    $(function(){
+        $('#id_date_composition').datepicker({
+            dateFormat: 'yy-mm-dd',
+            yearRange: '2009:2099',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
     //]]>
     </script>
 

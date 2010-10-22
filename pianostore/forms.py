@@ -22,7 +22,9 @@ class TrackForm(forms.ModelForm):
     def __init__(self, user=None, *args, **kwargs):
         super(TrackForm, self).__init__(*args, **kwargs)
         self.user = user
+        # original_track will be modified by nginx upload module
         self.fields['original_track'].required = False
+        # new field rotation which will be used by celeryd
         rotation = self.fields.keyOrder.pop(
             self.fields.keyOrder.index("rotation")
         )

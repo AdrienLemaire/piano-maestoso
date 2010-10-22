@@ -38,13 +38,14 @@ h1 {
 
 #container {
     position:relative;
-    width: 690px;
+    background-color:red;
 }
 #body {
     padding-bottom: 20%;
+    background-color:blue;
 }
 #body_block {
-    position: absolute;
+    /*position: absolute;*/
     right:180px;
     left:0;
     background-color: #fff;
@@ -52,18 +53,18 @@ h1 {
     padding-top:120px;
     padding-bottom: 5em;
 }
-#body_block>:last-child {
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    padding-bottom:170px;
-    padding-right:170px;
-    background: -moz-radial-gradient(#666 50%, #000 80%);
-    z-index:-1;
-    -moz-border-radius-bottomright: 340px;
-}
+/*#body_block>:last-child {*/
+    /*position:absolute;*/
+    /*top:0;*/
+    /*bottom:0;*/
+    /*width:100%;*/
+    /*height:100%;*/
+    /*padding-bottom:170px;*/
+    /*padding-right:170px;*/
+    /*background: -moz-radial-gradient(#666 50%, #000 80%);*/
+    /*z-index:-1;*/
+    /*-moz-border-radius-bottomright: 340px;*/
+/*}*/
 
 #footer {
     color: #999; /* footer text colour */
