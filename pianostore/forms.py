@@ -32,6 +32,7 @@ class TrackForm(forms.ModelForm):
             self.fields.keyOrder.index("title"), rotation
         )
         self.is_update = False
+        self.fields['rotation'].required = False
 
     def clean(self):
         """ Do validation stuff. """

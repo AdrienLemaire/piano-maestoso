@@ -81,8 +81,6 @@ def add_track(request):
         if track_form.is_valid():
             new_track = track_form.save(commit=False)
             new_track.adder = request.user
-            new_track.original_track = os.path.join(settings.UPLOAD_URL,
-                    request.POST['original_track.name'])
             new_track.save()
 
             # The video process should be done like this :
@@ -93,10 +91,11 @@ def add_track(request):
             rotate_video(
                 request.POST['original_track.path'],
                 request.POST['original_track.name'],
+                str(new_track.id),
                 request.POST['rotation']
             )
             for fileext in ["mp4", "ogv", "webm"]:
-                html5_videos_convert.delay(fileext, new_track.original_track)
+                html5_videos_convert.delay(fileext, str(new_track.id))
 
             request.user.message_set.create(message=_("You have successfully "
                 "uploaded track '%(title)s'") % {'title': new_track.title})

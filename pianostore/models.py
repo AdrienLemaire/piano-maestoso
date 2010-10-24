@@ -73,7 +73,7 @@ class Track(models.Model):
     # Other
     is_public = models.BooleanField('is public', default=True,
         help_text=_('Public videos will be displayed in the default views.'))
-    category = models.CharField(_('category'), max_length=255)
+    category = models.CharField(_('category'), max_length=255, blank=True)
     tags = TagField(help_text=tagfield_help_text, verbose_name=_('tags'))
     #stars = models.IntegerField(_('stars'))
 

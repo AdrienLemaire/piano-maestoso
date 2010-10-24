@@ -1,3 +1,5 @@
+# -*- coding:Utf-8 -*-
+
 # from python
 #from optparse import make_option
 #from subprocess import call
@@ -34,24 +36,17 @@ class Command(BaseCommand):
 def _convert(track, fileext, logger):
     filename =  track.title_slug
     input = track.original_track.file.name
-    logger.info(filename)
-    logger.info(input)
-    logger.info(fileext)
     if fileext == "ogv":
         logger.info(commands.getoutput('%s --videoquality 5 '
            '--audioquality 1 --videobitrate 200 --output '
            '/tmp/%s.ogv %s' % (settings.FFMPEG2THEORA_PATH, filename, input)))
     else:
-        logger.info('%s -i %s -sameq /tmp/%s.%s' % (settings.FFMPEG_PATH, input, filename, fileext))
         logger.info(commands.getoutput('%s -i %s -sameq /tmp/%s.%s' % (settings.FFMPEG_PATH, input, filename, fileext)))
     #Open the file and put it in a friendly format to save the image
     f = open('/tmp/%s.%s' % (filename, fileext), 'r')
     filecontent = ContentFile(f.read())
     f.close()
-    logger.info("%s adds track_%s fields" % (track, fileext))
-    logger.info("track.track_%s.save('%s.%s') : %s" % (fileext, filename, fileext, track.__getattribute__("track_%s" % fileext)))
     logger.info(track.__getattribute__("track_%s" % fileext).save('%s.%s' % (filename, fileext), filecontent , save=True))
-    logger.info("track.track_%s.save('%s.%s') : %s" % (fileext, filename, fileext, track.__getattribute__("track_%s" % fileext)))
     if not track.image and fileext == "mp4":
         logger.info(commands.getoutput('%s -i /tmp/%s.%s -vframes 1 -ss 10 /tmp/%s1.png' % (settings.FFMPEG_PATH, filename, fileext, filename)))
         f = open('/tmp/%s1.png' % filename, 'r')

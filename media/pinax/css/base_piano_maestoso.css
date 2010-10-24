@@ -274,7 +274,8 @@ div.right_panel {
     width: 90%;
 }
 .coverart img{
-    max-width: 50%;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 #progress_container {

@@ -34,7 +34,8 @@ Then make && make install
     git clone git://git.ffmpeg.org/libswscale/
     ./configure --enable-libfaac --enable-gpl --enable-libvpx --enable-libtheora --enable-libx264 --enable-libvorbis --enable-nonfree
     make && sudo make install
- - override FFMPEG_PATH and FFMPEG2THEORA_PATH in local_settings.py (should be "/usr/local/bin/ffmpeg" and "/usr/bin/ffmpeg2theora")
+ - install mencoder (for rotation) : sudo aptitude install mencoder
+ - override FFMPEG_PATH, FFMPEG2THEORA_PATH and MENCODER_PATH in local_settings.py (eg. "/usr/local/bin/ffmpeg", "/usr/bin/ffmpeg2theora" and "/usr/bin/mencoder")
 
  TREE :
  ~~~~~~

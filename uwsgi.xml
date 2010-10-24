@@ -1,5 +1,5 @@
 <uwsgi>
-    <!--<pythonpath>/home/adrien/envs/piano-maestoso/lib/python2.5/site-packages/</pythonpath>-->
+    <!--<pythonpath>/home/adrien/Envs/piano-maestoso/lib/python2.5/site-packages/</pythonpath>-->
     <home>/home/adrien/Envs/piano-maestoso/</home>
     <pythonpath>/var/lib/django/piano-maestoso/</pythonpath>
     <pythonpath>/var/lib/django/</pythonpath>
